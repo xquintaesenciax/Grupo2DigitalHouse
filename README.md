@@ -46,12 +46,12 @@ Agradecemos las contribuciones de la comunidad. Si deseas contribuir a Velvet, p
 5. Revisaremos y consideraremos tus contribuciones.
 
 ## Referentes
-Nos guiamos del estilo de la siguientes paginas
-https://markova.com/
-https://www.devre.la/
-https://www.mercadolibre.com.ar/
-https://www.benka.com.ar/
-https://www.zara.com/ar/
+Nos guiamos del estilo de la siguientes paginas.
+1. https://markova.com/
+2. https://www.devre.la/
+3. https://www.mercadolibre.com.ar/
+4. https://www.benka.com.ar/
+5. https://www.zara.com/ar/
 
 ## Contacto
 
