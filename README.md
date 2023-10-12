@@ -11,7 +11,7 @@ eventos formales y en su vida cotidiana.
 - [Instalación](#instalación)
 - [Uso](#uso)
 - [Contribuciones](#contribuciones)
-- [Licencia](#licencia)
+- [Referentes](#Referentes)
 - [Contacto](#contacto)
 
 ## Características
@@ -45,7 +45,7 @@ Agradecemos las contribuciones de la comunidad. Si deseas contribuir a Velvet, p
 4. Envía una solicitud de extracción (pull request) a nuestra rama principal.
 5. Revisaremos y consideraremos tus contribuciones.
 
-## Referente
+## Referentes
 Nos guiamos del estilo de la siguientes paginas
 https://markova.com/
 https://www.devre.la/
