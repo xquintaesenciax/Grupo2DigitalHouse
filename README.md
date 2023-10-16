@@ -10,7 +10,6 @@ eventos formales y en su vida cotidiana.
 - [Características](#características)
 - [Instalación](#instalación)
 - [Uso](#uso)
-- [Contribuciones](#contribuciones)
 - [Referentes](#Referentes)
 - [Contacto](#contacto)
 
@@ -23,8 +22,8 @@ eventos formales y en su vida cotidiana.
 
 ## Instalación
 
-##No se requiere instalación para acceder a nuestra tienda en línea. Simplemente visita nuestro sitio web en [www.velvet.com](https://www.velvet.com) para explorar nuestro catálogo y realizar compras.
-Intalar NPM
+##
+Instalar NPM
 Instalar Node.js
 
 ## Uso
@@ -35,15 +34,6 @@ Instalar Node.js
 4. Procede al proceso de pago y proporciona la información de envío y pago.
 5. Recibirás una confirmación de tu pedido y podrás hacer un seguimiento en línea.
 
-## Contribuciones
-
-Agradecemos las contribuciones de la comunidad. Si deseas contribuir a Velvet, por favor sigue estas pautas:
-
-1. Realiza un fork del repositorio.
-2. Crea una rama para tu contribución.
-3. Haz tus cambios y documenta adecuadamente.
-4. Envía una solicitud de extracción (pull request) a nuestra rama principal.
-5. Revisaremos y consideraremos tus contribuciones.
 
 ## Referentes
 Nos guiamos del estilo de la siguientes paginas.
