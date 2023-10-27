@@ -46,13 +46,17 @@ Nos guiamos del estilo de la siguientes paginas.
 
 ## Contacto
 
-##Integrantes
-
-Martin Luciano Nahuel Ocampo
-Cesar Alejandro Ramos
-Emmanuel Iván Parra
-Nuria Abellan
-
 Si tienes preguntas, sugerencias o necesitas asistencia, no dudes en ponerte en contacto con nuestro equipo de soporte en [support@velvet-trajes.com](mailto:support@velvet-trajes.com).
 
 ¡Gracias por elegir Velvet para tus necesidades de trajes elegantes!
+
+## Integrantes
+
+Martin Luciano Nahuel Ocampo
+
+Cesar Alejandro Ramos
+
+Emmanuel Iván Parra
+
+Nuria Abellan
+
