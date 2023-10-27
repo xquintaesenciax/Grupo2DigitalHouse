@@ -12,6 +12,7 @@ eventos formales y en su vida cotidiana.
 - [Uso](#uso)
 - [Referentes](#Referentes)
 - [Contacto](#contacto)
+- [Integrantes](#Integrantes)
 
 ## Características
 
@@ -44,6 +45,13 @@ Nos guiamos del estilo de la siguientes paginas.
 5. https://www.zara.com/ar/
 
 ## Contacto
+
+##Integrantes
+
+Martin Luciano Nahuel Ocampo
+Cesar Alejandro Ramos
+Emmanuel Iván Parra
+Nuria Abellan
 
 Si tienes preguntas, sugerencias o necesitas asistencia, no dudes en ponerte en contacto con nuestro equipo de soporte en [support@velvet-trajes.com](mailto:support@velvet-trajes.com).
 
