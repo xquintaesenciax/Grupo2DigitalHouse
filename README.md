@@ -13,6 +13,7 @@ eventos formales y en su vida cotidiana.
 - [Referentes](#Referentes)
 - [Contacto](#contacto)
 - [Integrantes](#Integrantes)
+- [Diseño](#Diseño)
 
 ## Características
 
@@ -60,3 +61,5 @@ Emmanuel Iván Parra
 
 Nuria Abellan
 
+## Diseño
+https://www.figma.com/file/fF3shCWMkhBA1osfajcLGe/Untitled?type=whiteboard&node-id=0-1&t=jLTLkdv1eWFKcMFL-0
