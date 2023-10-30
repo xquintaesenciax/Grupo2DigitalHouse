@@ -15,8 +15,80 @@ body {
 }
 
 header {
-  background-color: #4021da;
-  height: 12vh;
+  background-color: #fff;
+  border-bottom: 1px solid #999696;
+}
+
+.div-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.items-header {
+  display: flex;
+  width: 45%;
+  margin: 0 auto;
+}
+
+.items-header-link {
+  display: none;
+}
+
+.items-menu,
+.items-logo {
+  width: 30%;
+}
+
+.items-marca {
+  width: 40%;
+  color: var(--cPrimario);
+}
+
+.items-header > .items-logo > img {
+  width: 100%;
+  height: 10vh;
+}
+
+.items-menu {
+  text-align: center;
+}
+
+.items-menu > button {
+  margin: 2.2vh 2vw;
+  border: 1px solid #a4a3a3;
+  border-radius: 5px;
+  background-color: transparent;
+}
+
+.items-search {
+  width: 75%;
+  margin: auto;
+}
+
+.items-search > input {
+  width: 100%;
+  margin: 2.2vh auto;
+  border: 1px solid #a4a3a3;
+  border-radius: 5px;
+}
+
+.items-submit {
+  width: 20%;
+  margin: auto;
+}
+
+.items-submit > button {
+  margin: 2.2vh auto;
+  border: 1px solid #a4a3a3;
+  border-radius: 5px;
+}
+
+.items-header > div,
+.items-header > a,
+.items-header > button,
+.items-header > img {
+  height: 10vh;
 }
 
 .main-home {
@@ -25,12 +97,14 @@ header {
 }
 
 .img-inicio {
-  background-color: #895ced;
+  background-color: white;
+  text-align: center;
 }
 
 .img-inicio > img {
+  margin: 2vh 0;
   height: 40vh;
-  width: 100%;
+  width: 50%;
 }
 
 .eslogan {
@@ -99,6 +173,11 @@ header {
   margin: 0;
 }
 
+.nombre-articulo {
+  border-top: 2px solid rgb(148, 148, 148);
+  padding-top: 1vh;
+}
+
 .div-button-descripcion > button {
   background-color: var(--cPrimario);
   color: #fff;
@@ -151,7 +230,9 @@ footer {
   padding: 15px;
 }
 
-.div-footer {
+.footer-items {
+  background-color: #dedddd;
+  border-radius: 10px;
   text-align: center;
   width: 90%;
   margin: 40px auto;
@@ -163,6 +244,10 @@ footer {
   width: 100%;
   color: #1259c3;
   margin-bottom: 10px;
+}
+
+footer > p {
+  text-align: center;
 }
 
 @media (min-width: 375px) {
@@ -195,7 +280,8 @@ footer {
 @media (min-width: 768px) {
   .img-inicio > img {
     height: 50vh;
-    width: 100%;
+    width: 50%;
+    margin: 2vh 0;
   }
 
   .texto-inicio {
@@ -213,11 +299,26 @@ footer {
   .div-button-descripcion > button {
     width: 70%;
   }
+
+  .footer-div {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .footer-items {
+    background-color: #dedddd;
+    border-radius: 10px;
+    text-align: center;
+    width: 30%;
+    margin: 30px auto;
+    padding: 20px;
+  }
 }
 
 @media (min-width: 1024px) {
   .img-inicio > img {
     height: 65vh;
+    width: 40%;
   }
 
   .item-img > img {
@@ -242,7 +343,7 @@ footer {
   .precio-descuento-articulo {
     display: flex;
     margin-top: 5px;
-    width: 58%;
+    width: 62%;
     margin: 5px auto;
   }
 
