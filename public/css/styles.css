@@ -1,7 +1,278 @@
-:root{
-    --cPrimario : #4021da;
-    --cSecundario: #653fe4;
-    --calgo2: #895ced;
-    --calgo3: #ae79f6;
-    --calgo4: #d397ff;
+:root {
+  --cPrimario: #4021da;
+  --cSecundario: #653fe4;
+  --calgo2: #895ced;
+  --calgo3: #ae79f6;
+  --calgo4: #d397ff;
+}
+
+body {
+  background-color: rgb(238, 235, 235);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+header {
+  background-color: #4021da;
+  height: 12vh;
+}
+
+.main-home {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.img-inicio {
+  background-color: #895ced;
+}
+
+.img-inicio > img {
+  height: 40vh;
+  width: 100%;
+}
+
+.eslogan {
+  background-color: #dedddd;
+}
+
+.texto-inicio {
+  font-family: sans-serif;
+  height: 15vh;
+  width: 100%;
+  font-size: 4vh;
+  text-align: center;
+  padding: 2vh 4vw;
+  margin: 0;
+}
+
+.autor-texto-inicio {
+  font-size: 3vh;
+  text-align: right;
+  padding: 1vh 2vw;
+  margin: 0;
+}
+
+.seccion-articulo {
+  display: flex;
+  flex-wrap: wrap;
+  padding: auto;
+  justify-content: space-between;
+  margin: 20px auto;
+}
+
+.seccion-articulo > h2 {
+  width: 100%;
+  margin: auto 5px;
+  font-size: 3vh;
+}
+
+.item-articulo {
+  box-shadow: 0px 0px 10px rgb(100, 100, 100);
+  width: 45%;
+  margin-bottom: 10px;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.item-img > img {
+  height: 23vh;
+  width: 100%;
+}
+
+.item-img {
+  width: 80%;
+  margin: 0 auto 1vh;
+}
+
+.item-descripcion {
+  text-align: center;
+  width: 92%;
+  margin: 1vh auto 0;
+}
+
+.item-descripcion > p {
+  font-size: 1.8vh;
+  margin: 0;
+}
+
+.div-button-descripcion > button {
+  background-color: var(--cPrimario);
+  color: #fff;
+  display: block;
+  font-size: 1.8vh;
+  height: 4vh;
+  width: 85%;
+  margin: 5px auto 0;
+  border: none;
+  border-radius: 10px;
+}
+
+.precio-descuento-articulo {
+  display: flex;
+  margin-top: 5px;
+}
+
+.precio-articulo,
+.descuento-articulo,
+.precio-sin-descuento {
+  margin: 0;
+  width: 31%;
+}
+
+.precio-articulo {
+  color: var(--cSecundario);
+  font-size: 3vh;
+}
+
+.cuotas-articulo {
+  color: rgb(132, 132, 132);
+}
+
+.descuento-articulo {
+  background-color: var(--calgo2);
+  font-size: 1.8vh;
+  margin: auto;
+  border-radius: 2px;
+}
+
+.precio-sin-descuento {
+  font-size: 1.8vh;
+  margin: auto;
+  color: rgb(132, 132, 132);
+}
+
+footer {
+  background-color: white;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.div-footer {
+  text-align: center;
+  width: 90%;
+  margin: 40px auto;
+  padding: 10px;
+}
+
+.div-icon-footer {
+  font-size: 2em;
+  width: 100%;
+  color: #1259c3;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 375px) {
+  .item-img > img {
+    height: 28vh;
+  }
+
+  .precio-articulo,
+  .descuento-articulo,
+  .precio-sin-descuento {
+    width: 27%;
+  }
+
+  .precio-descuento-articulo {
+    width: 95%;
+    margin: auto;
+  }
+}
+
+@media (min-width: 475px) {
+  .item-img > img {
+    height: 33vh;
+  }
+
+  .precio-descuento-articulo {
+    width: 68%;
+  }
+}
+
+@media (min-width: 768px) {
+  .img-inicio > img {
+    height: 50vh;
+    width: 100%;
+  }
+
+  .texto-inicio {
+    font-size: 5vh;
+  }
+
+  .item-img > img {
+    height: 33vh;
+  }
+
+  .item-articulo {
+    width: 30%;
+  }
+
+  .div-button-descripcion > button {
+    width: 70%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .img-inicio > img {
+    height: 65vh;
+  }
+
+  .item-img > img {
+    height: 40vh;
+  }
+
+  .eslogan {
+    width: 70%;
+    margin: 5vh auto;
+    border-radius: 10px;
+  }
+
+  .texto-inicio {
+    font-size: 6vh;
+  }
+
+  .div-button-descripcion > button {
+    height: 5vh;
+    width: 60%;
+  }
+
+  .precio-descuento-articulo {
+    display: flex;
+    margin-top: 5px;
+    width: 58%;
+    margin: 5px auto;
+  }
+
+  .item-articulo {
+    width: 27%;
+    margin-bottom: 3vh;
+  }
+}
+
+@media (min-width: 1170px) {
+  .item-img > img {
+    height: 35vh;
+    width: 100%;
+  }
+  .texto-inicio {
+    font-size: 7vh;
+  }
+
+  .item-articulo {
+    width: 23%;
+  }
+}
+
+@media (min-width: 1220px) {
+  .item-img > img {
+    height: 45vh;
+    width: 100%;
+  }
+
+  .div-button-descripcion > button {
+    margin: 5px auto 1vh;
+  }
 }
