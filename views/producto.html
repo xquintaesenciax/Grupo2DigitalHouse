@@ -3,12 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/dc2d60730e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/producto.css">
 
-    <title>Document</title>
+    <title>Producto</title>
 </head>
 <body>
-    <h1>Producto</h1>
+    <div class="product-container">
+    <section class="images">
+        <div class="thumbnails">
+            <img class="thumbnail" src="img/productos/miniatura1.png">
+            <img class="thumbnail" src="img/productos/miniatura2.png">
+            <img class="thumbnail" src="img/productos/miniatura3.png">
+            <img class="thumbnail" src="img/productos/miniatura4.png">
+            <img class="thumbnail" src="img/productos/miniatura5.png">
+        </div>
+        
+        <div class="main-image">
+            <img id="main-image" src="img/productos/cuerpo-completo.png">
+        </div>
+        
+    </section>
+
+    <section class="description">
+        <h1 class="title">Traje SS100 Satén Gris Oscuro</h1>
+        <h3 class="price">$300.000</h3>
+        <p class="dues">3 cuotas sin interés de $100.000</p>
+        <p>Traje SS 100 con un diseño liso semi satinado. Saco incluye un cuello en V. Con juego de dos botones y tres bolsillos externos. El pantalón es recto, sin pinzas. De tiro medio. Incluye cuatro bolsillos dos laterales y dos traseros. El conjunto es de calce slim fit y de color gris oscuro. Ideal para distintas ocasiones de outfit formal.</p>
+        <p class="color">Color: <i class="fa-solid fa-droplet" style="color: #373737;"></i> Gris Oscuro </p>
+        <p class="size">Talle:</p>
+        <input type="radio" class="size" name="size" value="38">
+        <label for="38">38</label>
+        <input type="radio" class="size" name="size" value="40">
+        <label for="40">40</label>
+        <input type="radio" class="size" name="size" value="42">
+        <label for="42">42</label>
+        <input type="radio" class="size" name="size" value="44">
+        <label for="44">44</label>
+        <input type="radio" class="size" name="size" value="46">
+        <label for="46">46</label>
+        <input type="radio" class="size" name="size" value="48">
+        <label for="48">48</label>
+        <input type="radio" class="size" name="size" value="50">
+        <label for="50">50</label>
+
+        <br>
+        <div class="buttons">
+            <button type="button" class="add">Agregar al carrito</button>
+            <button type="button" class="shop">Comprar</button>
+        </div>
+
+        <div class="shipping">
+            <label for="shipping">Calcular envío:</label>
+            <input type="text" id="shipping" name="CP" placeholder="C.P.">
+        </div>
+        
+        
+    </section>
+</div>
 </body>
 </html>
