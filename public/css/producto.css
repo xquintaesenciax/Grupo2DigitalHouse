@@ -30,27 +30,27 @@ body {
 }
 
 .thumbnails {
-    width: 180px; /* Ancho de la sección de miniaturas */
+    width: 180px; 
     display: flex;
-    flex-direction: column; /* Apilar miniaturas verticalmente en pantallas pequeñas */
-    align-items: center; /* Centrar miniaturas verticalmente en pantallas pequeñas */
+    flex-direction: column; 
+    align-items: center; 
     
 }
 
 .thumbnail {
     display: block;
-    max-width: 100%; /* Hacer que las miniaturas sean responsivas */
+    max-width: 100%; 
     margin-bottom: 10px;
     cursor: pointer;
 }
 
 .main-image {
-    margin-left: 20px; /* Espacio entre miniaturas y la imagen principal */
-    flex-grow: 1; /* Para que ocupe todo el espacio disponible en la fila */
+    margin-left: 20px; 
+    flex-grow: 1; 
 }
 
 #main-image {
-    max-width: 100%; /* Ajusta la imagen principal al ancho del contenedor */
+    max-width: 100%; 
 }
 
 .description .title {
