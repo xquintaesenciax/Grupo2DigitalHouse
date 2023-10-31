@@ -1,14 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/be1fa4fe95.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/styles.css">
-
+    <link rel="stylesheet" href="/css/carritoestilos.css">
     <title>Document</title>
 </head>
+
 <body>
-    <h1>Carrito</h1>
+    <header>
+        <div class="mostrar">
+            <button id="mostrarVacio">Item</button>
+            <button id="mostrarItem">Vacio</button>
+        </div>
+    </header>
+    <main class="container">
+        <section class="container-carrito" id="carritoVacio">
+            <div class="carritoVacio">
+                <h2>!Hay un carrito que llenar!</h2>
+                <p class="carrito"><i class="fa-solid fa-cart-shopping"></i></p>
+                <p><b>Actualmente no tenés productos en tu carrito.</b></p>
+                <p>Buscá entre millones de productos que nosotros los llevamos a tu puerta.</p>
+                <a href="/"><button class="buscar">Buscar Productos</button></a>
+            </div>
+        </section>
+
+        <div class="totalCarrito oculto" id="carritoItem">
+            <section class="carritoConProductos">
+                <h2 class="productos">Productos</h2>
+                <hr>
+                <div class="datosCarrito">
+                    <div class="containerDatos">
+                        <div class="imgArt">
+                            <img src="/img/impermeable-homme.jpg" alt="carrito" width="64px" height="64px">
+                        </div>
+                        <div class="nombre">
+                            <div class="regionNombre">
+                                <p class="tituloCarrito">Impermeable Homme uni</p>
+                                <div class="botonesControl">
+                                    <div class="boton">
+                                        <button>Eliminar</button>
+                                    </div>
+                                    <div class="boton">
+                                        <button>Guardar</i></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="regionPrecio">
+                                <div class="selectCarrito">
+                                    <select name="unidades" class="cantidad" id="cantidad">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
+                                </div>
+                                <div class="precioArt">
+                                    <p id="precioVenta" class="precioCarrito">$ 150.000</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="envio">
+                        <p>Envío</p>
+                        <p class="gratis">Gratis</p>
+                    </div>
+                </div>
+            </section>
+            <section class="containerTotal">
+                <div class="envioTotal">
+                    <div class="tipoEnvio">
+                        <p class="tituloTipoEnvio">Tipo de Envio</p>
+                        <div class="tipos">
+                            <p><input type="radio" name="envio" checked> Envio a domicilio</p>
+                        <p><input type="radio" name="envio"> Retiro en sucursal</p>
+                        <p><input type="radio" name="envio"> Retiro en punto pick</p>
+                        </div>
+                    </div>
+                    <div class="totales">
+                        <p class="col1">Subtotal:</p><p id="subtotal" class="col2">$ 150.000</p>
+                        <p class="col1">Envio</p><p class="col2">Gratis</p>
+                        <p class="col1 precioTotal"><b>Total</b></p><p class="col2 precioTotal"><b>$ 150.000</b></p>
+                    </div>
+                    <div class="botonesTotales">
+                        <button class="comprar">Comprar</button>
+                        <a href="/"><button class="masProductos">Ver mas productos</button></a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <section class="recomendado">
+            <h3 class="tituloRecomendado">Porductos recomendados</h3>
+            <div class="cards">
+                <div class="card">
+                    <div class="cardRecomendado">
+                        <img src="/img/impermeable-homme.jpg" alt="" class="img">
+                    </div>
+                    <hr>
+                    <div class="cardDescription">
+                        <p class="descripcion">Impermeable Homme uni</p>
+                        <p class="precios"><b>AR$ 150.000</b></p>
+                        <p class="cuotas">12x$ 25.000</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="cardRecomendado">
+                        <img src="/img/impermeable-homme.jpg" alt="" class="img">
+                    </div>
+                    <hr>
+                    <div class="cardDescription">
+                        <p class="tituloRecomendado">Impermeable Homme uni</p>
+                        <p class="precios"><b>AR$ 150.000</b></p>
+                        <p class="cuotas">12x$ 25.000</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="cardRecomendado">
+                        <img src="/img/impermeable-homme.jpg" alt="" class="img">
+                    </div>
+                    <hr>
+                    <div class="cardDescription">
+                        <p class="descripcion">Impermeable Homme uni</p>
+                        <p class="precios"><b>AR$ 150.000</b></p>
+                        <p class="cuotas">12x$ 25.000</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="cardRecomendado">
+                        <img src="/img/impermeable-homme.jpg" alt="" class="img">
+                    </div>
+                    <hr>
+                    <div class="cardDescription">
+                        <p class="descripcion">Impermeable Homme uni</p>
+                        <p class="precios"><b>AR$ 150.000</b></p>
+                        <p class="cuotas">12x$ 25.000</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <footer></footer>
 </body>
+
+
+
+<script>
+    const precioElement = document.getElementById("precioVenta");
+    const cantidadElement = document.getElementById("cantidad");
+    const subtotalElement= document.getElementById("subtotal")
+    let precioBase = 150000;
+
+    cantidadElement.addEventListener("change", function () {
+        const cantidad = parseInt(cantidadElement.value);
+        const total = precioBase * cantidad;
+        const retorno = total.toLocaleString();
+        const precio = '$ ' + retorno;
+        precioElement.textContent = precio;
+        subtotalElement.textContent = precio;
+
+    });
+
+    //ocultar carrito
+
+    const carritoVacio = document.getElementById("carritoVacio");
+    const carritoItem = document.getElementById("carritoItem");
+    const botonItem = document.getElementById("mostrarVacio");
+    const botonCarritoVacio = document.getElementById("mostrarItem");
+
+    botonItem.addEventListener("click", function() {
+        carritoVacio.classList.add("oculto"); // Oculta el carrito vacío
+        carritoItem.classList.remove("oculto"); // Muestra el carrito con items
+    });
+    botonCarritoVacio.addEventListener("click", function() {
+        carritoItem.classList.add("oculto"); // Oculta el carrito con items
+        carritoVacio.classList.remove("oculto"); // Muestra el carrito vacío
+    });
+</script>
+
 </html>
