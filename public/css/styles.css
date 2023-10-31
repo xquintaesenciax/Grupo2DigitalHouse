@@ -14,6 +14,7 @@ body {
   box-sizing: border-box;
 }
 
+/* CSS HEADER */
 header {
   background-color: #fff;
   border-bottom: 1px solid #999696;
@@ -27,8 +28,10 @@ header {
 
 .items-header {
   display: flex;
+  flex-wrap: wrap;
   width: 45%;
-  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .items-header-link {
@@ -85,16 +88,12 @@ header {
 }
 
 .items-header > div,
-.items-header > a,
 .items-header > button,
 .items-header > img {
   height: 10vh;
 }
 
-.main-home {
-  width: 90%;
-  margin: 0 auto;
-}
+/* NO SE COMO LLAMARLE XD */
 
 .img-inicio {
   background-color: white;
@@ -126,6 +125,13 @@ header {
   text-align: right;
   padding: 1vh 2vw;
   margin: 0;
+}
+
+/* CSS MAIN */
+
+.main-home {
+  width: 90%;
+  margin: 0 auto;
 }
 
 .seccion-articulo {
@@ -224,6 +230,8 @@ header {
   color: rgb(132, 132, 132);
 }
 
+/* CSS FOOTER */
+
 footer {
   background-color: white;
   margin: 0 auto;
@@ -251,9 +259,13 @@ footer > p {
 }
 
 @media (min-width: 375px) {
+  /* NO SE COMO LLAMARLE XD*/
+
   .item-img > img {
     height: 28vh;
   }
+
+  /* CSS MAIN */
 
   .precio-articulo,
   .descuento-articulo,
@@ -268,6 +280,63 @@ footer > p {
 }
 
 @media (min-width: 475px) {
+  /* CSS HEADER */
+
+  .items-header-menu-logo {
+    display: flex;
+    width: 20%;
+    margin: 0 auto;
+  }
+
+  .items-logo {
+    width: 45%;
+  }
+
+  .items-marca {
+    width: 55%;
+  }
+
+  .items-header-search {
+    display: flex;
+    width: 40%;
+    margin: 0 auto;
+  }
+
+  .items-header-link {
+    display: flex;
+    flex-wrap: wrap;
+    width: 30%;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .items-header-link > a {
+    width: 30%;
+    text-decoration: none;
+    color: #000;
+    text-align: center;
+  }
+
+  .login {
+    width: 30%;
+  }
+
+  .register {
+    width: 35%;
+    text-align: center;
+  }
+
+  .carrito {
+    width: 20%;
+  }
+
+  .items-menu {
+    display: none;
+  }
+
+  /* CSS MAIN */
+
   .item-img > img {
     height: 33vh;
   }
@@ -278,6 +347,26 @@ footer > p {
 }
 
 @media (min-width: 768px) {
+  /* CSS HEADER */
+
+  .items-header-search {
+    width: 45%;
+  }
+
+  .items-search {
+    width: 80%;
+  }
+
+  .items-submit {
+    width: 15%;
+  }
+
+  .items-header-link {
+    width: 20%;
+  }
+
+  /* NO SE COMO LLAMARLE XD */
+
   .img-inicio > img {
     height: 50vh;
     width: 50%;
@@ -287,6 +376,8 @@ footer > p {
   .texto-inicio {
     font-size: 5vh;
   }
+
+  /* CSS MAIN */
 
   .item-img > img {
     height: 33vh;
@@ -299,6 +390,8 @@ footer > p {
   .div-button-descripcion > button {
     width: 70%;
   }
+
+  /* CSS FOOTER */
 
   .footer-div {
     display: flex;
@@ -316,13 +409,11 @@ footer > p {
 }
 
 @media (min-width: 1024px) {
+  /* NO SE COMO LLAMARLE XD */
+
   .img-inicio > img {
     height: 65vh;
     width: 40%;
-  }
-
-  .item-img > img {
-    height: 40vh;
   }
 
   .eslogan {
@@ -330,9 +421,14 @@ footer > p {
     margin: 5vh auto;
     border-radius: 10px;
   }
-
   .texto-inicio {
     font-size: 6vh;
+  }
+
+  /* CSS MAIN */
+
+  .item-img > img {
+    height: 40vh;
   }
 
   .div-button-descripcion > button {
@@ -354,20 +450,26 @@ footer > p {
 }
 
 @media (min-width: 1170px) {
+  /* CSS MAIN */
+
   .item-img > img {
     height: 35vh;
     width: 100%;
-  }
-  .texto-inicio {
-    font-size: 7vh;
   }
 
   .item-articulo {
     width: 23%;
   }
+
+  /* NO SE COMO LLAMARLE XD */
+  .texto-inicio {
+    font-size: 7vh;
+  }
 }
 
 @media (min-width: 1220px) {
+  /* CSS MAIN */
+
   .item-img > img {
     height: 45vh;
     width: 100%;

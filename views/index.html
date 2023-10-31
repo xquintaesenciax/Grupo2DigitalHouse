@@ -19,7 +19,7 @@
   <body>
     <header>
       <div class="div-header">
-        <div class="items-header">
+        <div class="items-header items-header-menu-logo">
           <div class="items-menu">
             <button type="menu"><i class="fa-solid fa-bars"></i></button>
           </div>
@@ -33,21 +33,23 @@
           </div>
         </div>
 
-        <div class="items-header">
+        <form class="items-header items-header-search">
           <div class="items-search">
-            <input type="text" placeholder="Buscar" />
+            <input type="text" name="search" id="search" placeholder="Buscar" />
           </div>
 
           <div class="items-submit">
-            <button type="submit">
+            <button type="submit" value="search">
               <i class="fa-solid fa-magnifying-glass"></i>
             </button>
           </div>
-        </div>
+        </form>
 
-        <div class="items-header items-header-link">
-          <a href="/login">Login</a>
-          <a href="/register">Registrarse</a>
+        <div class="items-header-link">
+          <a href="/login">Sign in</a>
+
+          <a href="/register">register</a>
+
           <a href="/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
       </div>
