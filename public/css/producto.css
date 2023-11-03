@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+:root{
+    --cPrimario : #4021da;
+    --cSecundario: #653fe4;
+    --calgo2: #895ced;
+    --calgo3: #ae79f6;
+    --calgo4: #d397ff;
+}
+
+/* Producto */
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.product-container {
+    display: flex;
+    margin: 5%;
+    flex-direction: column;
+}
+
+.images {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.thumbnails {
+    width: 180px; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    
+}
+
+.thumbnail {
+    display: block;
+    max-width: 100%; 
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.main-image {
+    margin-left: 20px; 
+    flex-grow: 1; 
+}
+
+#main-image {
+    max-width: 100%; 
+}
+
+.description .title {
+    font-size: 24px;
+}
+
+.description .price {
+    font-size: 20px;
+    color: var(--calgo2);
+}
+
+p {
+    margin-top: 30px;
+}
+
+.description .dues {
+    color: gray;
+}
+
+.description .buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.description button {
+    width: 160px;
+    border-radius: 15px;
+    color: white;
+    padding: 5px;
+    margin-top: 20px;
+}
+
+.description .add {
+    border:solid #321aa9 5px;
+    background-color: var(--cPrimario) ;
+}
+
+.description .shop {
+    border: solid green 5px;
+    background-color:rgb(4, 190, 4);
+}
+
+.shipping {
+    margin-top: 20px;
+}
+
+#shipping {
+    width: 100px;
+    border: solid gray 1px;
+    border-radius: 10px;
+}
+
+
+@media (min-width: 750px) {
+    .product-container {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .images {
+        width: 35%;
+    }
+    .description {
+        width: 35%;
+    }
+}
+
+/* Fin producto */

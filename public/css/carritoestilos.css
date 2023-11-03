@@ -1,0 +1,217 @@
+:root {
+    --cPrimario: #4021da;
+    --cSecundario: #653fe4;
+    --calgo2: #895ced;
+    --calgo3: #ae79f6;
+    --calgo4: #d397ff;
+}
+body{
+    max-width: 1200px;
+    margin: auto;
+}
+
+.container-carrito {
+    background-color: #E6E6E6;
+    margin: 5px 10px;
+    padding: 30px 10px;
+    border-radius: 5px;
+}
+
+.carrito {
+    font-size: 50px;
+    margin: 0px 15px;
+    color: var(--cSecundario);
+    text-align: center;
+}
+
+.buscar {
+    background-color: var(--cSecundario);
+    color: white;
+    border-style: none;
+    padding: 5px 20px;
+    margin-top: 10px;
+}
+
+.recomendado {
+    margin: 5px 10px;
+}
+
+.tituloRecomendado {
+    margin-bottom: 5px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 5px;
+}
+
+.card {
+    border: 1px solid #bfbebe;
+    border-radius: 5px;
+    padding: 10px 10px;
+}
+
+.img {
+    width: 100%;
+    margin: auto;
+}
+
+.descripcion {
+    font-size: 20px;
+    margin: 0px;
+}
+
+.precios {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.cuotas {
+    margin: 0px;
+    font-size: 15px;
+}
+
+
+
+/*Carrito con items*/
+
+.productos{
+    margin: 5px 0 15px 0;
+}
+.carritoConProductos {
+    padding:10px;
+    margin: 5px 10px;
+    border-radius: 5px;
+}
+
+.containerDatos{
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+.nombre{
+    margin: 5px;
+}
+.tituloCarrito, .precioCarrito{
+    margin: 0;
+}
+.boton{
+    display: inline-block;
+    font-size: 10px;
+}
+.boton button{
+    color: var(--cPrimario);
+}
+.boton span{
+    margin: 0 10px;
+}
+.boton button{
+    border: none;
+}
+.regionPrecio{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+.cantidad{
+    width: 70px;
+    border-radius: 5px;
+    border-color: #895ced;
+    padding: 2px 0zº;
+    text-align: center;
+}
+.envio{
+    display: flex;
+    justify-content: space-between;
+}
+.envio p{
+    font-size: 15px;
+    margin: 0;
+}
+.gratis{
+    color: var(--cSecundario);
+}
+
+.containerTotal {
+    background-color: #E6E6E6;
+    margin: 5px 10px;
+    border-radius: 5px;
+    padding: 10px;
+}
+.containerTotal fieldset{
+    border:1px solid var(--cSecundario);
+    border-radius: 5px;
+}
+.tituloTipoEnvio{
+    font-size: 25px;
+    margin-bottom: 0px;
+}
+.totales{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+}
+.col1{
+    margin: 5px auto 0 0;
+}
+.col2{
+    margin: 5px 0 0 auto;
+}
+.precioTotal{
+    font-size: 24px;
+}
+.botonesTotales button{
+    display: block;
+    margin: 10px auto;
+}
+.botonesTotales button{
+    width: 200px;
+    border-radius: 10px;
+    color: white;
+    padding: 5px 10px;
+}
+.comprar{
+    background-color: #14AE5C;
+    border:2px solid #0f8345;  
+}
+.masProductos{
+    background-color: var(--cSecundario);
+    border:2px solid var(--calgo2)
+}
+
+/*Media*/
+@media (min-width: 720px) {
+    .carritoVacio {
+        text-align: center;
+    }
+    .containerDatos{
+        grid-template-columns: 10% 90%;
+    }
+    .imgArt{
+        display: flex;
+        justify-content: center;
+    }
+    .tituloCarrito{
+        font-size: 24px;
+    }
+    .boton{
+        font-size: 12px;
+    }
+    .nombre{
+        display: grid;
+        grid-template-columns: 80% 20%;
+    }
+    .totalCarrito{
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+    }
+}
+
+.oculto{
+    display: none;
+}
+a{
+    text-decoration: none;
+}

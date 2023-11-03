@@ -1,3 +1,4 @@
+
 :root {
   --cPrimario: #4021da;
   --cSecundario: #653fe4;
@@ -478,4 +479,5 @@ footer > p {
   .div-button-descripcion > button {
     margin: 5px auto 1vh;
   }
-}
+
+
