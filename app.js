@@ -5,12 +5,12 @@ const path = require("path");
 //requires de rutas
 const indexRouter = require("./routes/indexRouter");
 
+//creacion de servidor
+const app = express();
+
 //path
 const publicPath = path.resolve(__dirname, "/public");
 app.use(express.static("public"));
-
-//creacion de servidor
-const app = express();
 
 //alta de servidor puerto 3030
 app.listen(3030, () => console.log("El puerto de inicio es: 3030"));
