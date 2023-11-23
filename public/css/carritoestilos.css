@@ -6,7 +6,7 @@
     --calgo4: #d397ff;
 }
 body{
-    max-width: 1200px;
+    /*max-width: 1200px;*/
     margin: auto;
 }
 
@@ -34,6 +34,11 @@ body{
 
 .recomendado {
     margin: 5px 10px;
+}
+
+.recomendado .productos{
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .tituloRecomendado {

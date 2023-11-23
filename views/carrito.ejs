@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/be1fa4fe95.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/carritoestilos.css">
-    <title>Document</title>
-</head>
+<%- include("./partials/head") %>
+<link rel="stylesheet" href="/css/carritoestilos.css">
 
 <body>
+    <%- include("./partials/header") %>
+
     <header>
         <div class="mostrar">
             <button id="mostrarVacio">Item</button>
@@ -24,7 +20,7 @@
                 <p class="carrito"><i class="fa-solid fa-cart-shopping"></i></p>
                 <p><b>Actualmente no tenés productos en tu carrito.</b></p>
                 <p>Buscá entre millones de productos que nosotros los llevamos a tu puerta.</p>
-                <a href="/"><button class="buscar">Buscar Productos</button></a>
+                <a href="/productos"><button class="buscar">Buscar Productos</button></a>
             </div>
         </section>
 
@@ -97,57 +93,38 @@
         </div>
 
         <section class="recomendado">
-            <h3 class="tituloRecomendado">Porductos recomendados</h3>
-            <div class="cards">
-                <div class="card">
-                    <div class="cardRecomendado">
-                        <img src="/img/impermeable-homme.jpg" alt="" class="img">
-                    </div>
-                    <hr>
-                    <div class="cardDescription">
-                        <p class="descripcion">Impermeable Homme uni</p>
-                        <p class="precios"><b>AR$ 150.000</b></p>
-                        <p class="cuotas">12x$ 25.000</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="cardRecomendado">
-                        <img src="/img/impermeable-homme.jpg" alt="" class="img">
-                    </div>
-                    <hr>
-                    <div class="cardDescription">
-                        <p class="tituloRecomendado">Impermeable Homme uni</p>
-                        <p class="precios"><b>AR$ 150.000</b></p>
-                        <p class="cuotas">12x$ 25.000</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="cardRecomendado">
-                        <img src="/img/impermeable-homme.jpg" alt="" class="img">
-                    </div>
-                    <hr>
-                    <div class="cardDescription">
-                        <p class="descripcion">Impermeable Homme uni</p>
-                        <p class="precios"><b>AR$ 150.000</b></p>
-                        <p class="cuotas">12x$ 25.000</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="cardRecomendado">
-                        <img src="/img/impermeable-homme.jpg" alt="" class="img">
-                    </div>
-                    <hr>
-                    <div class="cardDescription">
-                        <p class="descripcion">Impermeable Homme uni</p>
-                        <p class="precios"><b>AR$ 150.000</b></p>
-                        <p class="cuotas">12x$ 25.000</p>
-                    </div>
-                </div>
+            <h3 class="tituloRecomendado">Productos recomendados</h3>
+            
+            <div class="productos">
+                <%for(let i=0; i<4; i++){%>
+                    <article class="item-articulo">
+                        <div class="item-img">
+                            <img src="<%=productos[i].images%>" alt="imagen-producto" />
+                        </div>
+                        <div class="item-descripcion">
+                            <p class="nombre-articulo"><%=productos[i].nombre%></p>
+                            <p class="descripcion-articulo"><%=productos[i].color%></p>
+                            <p class="cuotas-articulo"><%=productos[i].cuotas%> cuotas sin interes</p>
+                            <div class="precio-descuento-articulo">
+                                <p class="precio-sin-descuento">$<%=productos[i].precioSinDescuento%></p>
+                                <p class="precio-articulo">$<%=productos[i].precio%></p>
+                                <p class="descuento-articulo"><%=productos[i].descuento%>% off</p>
+                            </div>
+                        
+                            <div class="div-button-descripcion">
+                                <button>Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </article>
+                    <%}%>  
             </div>
+            
+            
+                
         </section>
 
     </main>
-    <footer></footer>
+    <%- include("./partials/footer") %>
 </body>
 
 

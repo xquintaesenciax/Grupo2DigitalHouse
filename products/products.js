@@ -59,6 +59,26 @@ const products = [
     precioSinDescuento: 3012,
     descuento: 17,
   },
+  {
+    id: 1,
+    images: "/img/product/camisa-hombre-1.jpg",
+    nombre: "TRAJE SS100 SATÉN",
+    color: "Marron Oscuro",
+    cuotas: 3,
+    precio: 2500,
+    precioSinDescuento: 3012,
+    descuento: 17,
+  },
+  {
+    id: 2,
+    images: "/img/product/camisa-hombre-2.jpg",
+    nombre: "TRAJE SS100 SATÉN",
+    color: "Bordo Brillante",
+    cuotas: 3,
+    precio: 2500,
+    precioSinDescuento: 3012,
+    descuento: 17,
+  }
 ];
 
 module.exports = products;

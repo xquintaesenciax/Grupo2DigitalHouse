@@ -1,27 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/dc2d60730e.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/producto.css">
-
-    <title>Producto</title>
-</head>
-<body>
+    <!DOCTYPE html>
+    <html lang="en">
+      
+      <%- include("./partials/head") %>
+      <link rel="stylesheet" href="/css/producto.css" />
+    <body>
+    
+        <%- include("./partials/header") %>
     <div class="product-container">
     <section class="images">
         <div class="thumbnails">
-            <img class="thumbnail" src="img/productos/miniatura1.png">
-            <img class="thumbnail" src="img/productos/miniatura2.png">
-            <img class="thumbnail" src="img/productos/miniatura3.png">
-            <img class="thumbnail" src="img/productos/miniatura4.png">
-            <img class="thumbnail" src="img/productos/miniatura5.png">
+            <img class="thumbnail" src="/img/productos/miniatura1.png">
+            <img class="thumbnail" src="/img/productos/miniatura2.png">
+            <img class="thumbnail" src="/img/productos/miniatura3.png">
+            <img class="thumbnail" src="/img/productos/miniatura4.png">
+            <img class="thumbnail" src="/img/productos/miniatura5.png">
         </div>
         
         <div class="main-image">
-            <img id="main-image" src="img/productos/cuerpo-completo.png">
+            <img id="main-image" src="/img/productos/cuerpo-completo.png">
         </div>
         
     </section>
@@ -62,5 +60,8 @@
         
     </section>
 </div>
+
+<%- include("./partials/footer") %>
+
 </body>
 </html>

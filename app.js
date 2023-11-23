@@ -4,6 +4,9 @@ const path = require("path");
 
 //requires de rutas
 const indexRouter = require("./routes/indexRouter");
+const productosRouter = require("./routes/productosRouter")
+const usersRouter = require("./routes/usersRouter")
+const carritoRouter = require("./routes/carritoRouter")
 
 //creacion de servidor
 const app = express();
@@ -22,18 +25,12 @@ app.set("view engine", "ejs");
 app.get("/", indexRouter);
 
 //carrito
-app.get("/carrito", (req, res) => {
-  res.sendFile(path.resolve("./views/carrito.html"));
-});
-//login
-app.get("/login", (req, res) => {
-  res.sendFile(path.resolve("./views/login.html"));
-});
-//producto
-app.get("/producto", (req, res) => {
-  res.sendFile(path.resolve("./views/producto.html"));
-});
+app.get("/carrito", carritoRouter)
+//users
+app.get("/login", usersRouter);
+app.get("/register", usersRouter)
+//productos
+app.get("/productos", productosRouter)
+app.get("/productos/:id", productosRouter)
 //registro
-app.get("/registro", (req, res) => {
-  res.sendFile(path.resolve("./views/registro.html"));
-});
+

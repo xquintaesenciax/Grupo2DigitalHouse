@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 
 :root {
   --cPrimario: #4021da;
@@ -8,6 +9,7 @@
 }
 
 body {
+  font-family: 'Noto Sans', sans-serif;
   background-color: rgb(238, 235, 235);
 }
 
@@ -47,11 +49,14 @@ header {
 .items-marca {
   width: 40%;
   color: var(--cPrimario);
+  display: flex;
+  align-items: center;
 }
 
 .items-header > .items-logo > img {
-  width: 100%;
+  /*width: 100%;*/
   height: 10vh;
+  text-align: center;
 }
 
 .items-menu {
@@ -92,6 +97,10 @@ header {
 .items-header > button,
 .items-header > img {
   height: 10vh;
+}
+
+.items-header > div {
+  text-align: center;
 }
 
 /* NO SE COMO LLAMARLE XD */
@@ -205,8 +214,8 @@ header {
 .precio-articulo,
 .descuento-articulo,
 .precio-sin-descuento {
-  margin: 0;
-  width: 31%;
+  margin: 15px;
+  width: 25%;
 }
 
 .precio-articulo {
@@ -220,7 +229,7 @@ header {
 
 .descuento-articulo {
   background-color: var(--calgo2);
-  font-size: 1.8vh;
+  font-size: 1.5vh;
   margin: auto;
   border-radius: 2px;
 }
@@ -328,9 +337,9 @@ footer > p {
     text-align: center;
   }
 
-  .carrito {
+  /*.carrito {
     width: 20%;
-  }
+  }*/
 
   .items-menu {
     display: none;
@@ -449,6 +458,54 @@ footer > p {
     margin-bottom: 3vh;
   }
 }
+
+/* CSS LOGIN/REGISTER*/
+
+.login-container {
+  max-width: 400px;
+  margin: 0 auto;
+  margin-top: 75px;
+  margin-bottom: 75px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2 {
+  text-align: center;
+}
+
+.login-container .form-group {
+  margin: 15px 0;
+}
+
+.login-container label {
+  display: block;
+}
+
+.login-container input[type="text"], .login-container input[type="password"], .login-container input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-container input[type="submit"] {
+  background: var(--cPrimario);
+  color: #fff;
+  border: 0;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-container input[type="submit"]:hover {
+  background: var(--cSecundario);
+  }
+
 
 @media (min-width: 1170px) {
   /* CSS MAIN */
