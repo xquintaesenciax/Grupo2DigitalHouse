@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("./partials/head")%>
+<body>
+    <%- include("./partials/header")%>
+    <div class="formulario-crear">
+        <form action="" method="post">
+            <div class="item-form">
+                <label for="nombre-producto">Nombre:</label>
+                <input type="text" name="nombre-producto">
+            </div>
+            
+            <div class="item-form">
+                <label for="descripcion">Descripción:</label>
+                <input type="text" name="descrpicion">
+            </div>
+
+            <div class="item-form">
+                <label for="imagenes">Imagenes:</label>
+                <input type="file" name="imagenes">
+            </div>
+            
+            <div class="item-form">
+                <label for="categoria">Categoría:</label>
+                <p><input type="radio" name="categoria" value="Traje"> Traje</p>
+                <p><input type="radio" name="categoria" value="Pantalón">Pantalón</p>
+                <p><input type="radio" name="categoria" value="Saco">Saco</p>
+                <p><input type="radio" name="categoria" value="Camisa">Camisa</p>
+                <p><input type="radio" name="categoria" value="Chaleco">Chaleco</p>
+            </div>
+
+            <div class="item-form">
+                <label for="color">Color:</label>
+                <input type="text" name="color">
+            </div>
+            
+            <div class="item-form">
+                <label for="precio">Precio:</label>
+                <input type="text" name="precio">
+            </div>
+            
+            
+            <input type="submit" value="Crear">
+        </form>
+    </div>
+</body>
+</html>
+

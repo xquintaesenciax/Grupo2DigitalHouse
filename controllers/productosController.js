@@ -9,6 +9,12 @@ const controller = {
     )[0];
     res.render("detalle-producto", { producto: producto });
   },
+  create: (req, res) => {
+    res.render("producto-create")
+  },
+  edit: (req, res) =>{
+    res.render("producto-edit")
+  }
 };
 
 module.exports = controller;
