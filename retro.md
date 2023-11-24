@@ -14,3 +14,21 @@ Aprovechar mas el tiempo
 
 5 - Dejar de hacer
 Perder el miedo a tomar la iniciativa
+
+------------------------------------------
+Retro 23/11/2023
+
+1 - Comenzar a hacer
+weeklys
+
+2- Hacer más
+Utilizar más y nmejor el Trello
+
+3- Continuar haciendo
+Comunicacion por distintos canales
+
+4- Hacer menos
+------
+
+5- Dejar de hacer
+Procrastinar las tareas
