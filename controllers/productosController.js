@@ -4,8 +4,11 @@ const controller = {
     res.render("productos", { productos: productos });
   },
   detalle: (req, res) => {
-    res.render("detalle-producto")
-  }
+    let producto = productos.filter(
+      (producto) => producto.id == req.params.id
+    )[0];
+    res.render("detalle-producto", { producto: producto });
+  },
 };
 
 module.exports = controller;
