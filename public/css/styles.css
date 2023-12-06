@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
 
 :root {
   --cPrimario: #4021da;
@@ -9,7 +9,7 @@
 }
 
 body {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
   background-color: rgb(238, 235, 235);
 }
 
@@ -268,6 +268,93 @@ footer > p {
   text-align: center;
 }
 
+/* CSS LOGIN/REGISTER*/
+
+.login-container {
+  max-width: 400px;
+  margin: 0 auto;
+  margin-top: 75px;
+  margin-bottom: 75px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2 {
+  text-align: center;
+}
+
+.login-container .form-group {
+  margin: 15px 0;
+}
+
+.login-container label {
+  display: block;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"],
+.login-container input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-container input[type="submit"] {
+  background: var(--cPrimario);
+  color: #fff;
+  border: 0;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-container input[type="submit"]:hover {
+  background: var(--cSecundario);
+}
+
+/*STYLES DEL FORMULARIO DE PRODUCTOS*/
+
+.product-form > form {
+  display: flex;
+  background-color: rgb(198, 194, 194);
+  width: 70vw;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  margin: 15px auto;
+  border-radius: 5px;
+}
+
+.product-form-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  margin: 10px;
+}
+.product-form-items-items {
+  width: 100%;
+}
+.product-form-items-items > label,
+.product-form-items-items > input {
+  display: block;
+  width: 100%;
+}
+
+.product-form-items-items > input[type="file"] {
+  width: 90%;
+}
+
+.product-form-items > input[type="submit"] {
+  width: 40%;
+  margin: 0 auto;
+}
+
 @media (min-width: 375px) {
   /* NO SE COMO LLAMARLE XD*/
 
@@ -353,6 +440,82 @@ footer > p {
 
   .precio-descuento-articulo {
     width: 68%;
+  }
+
+  .product-form > form {
+    display: flex;
+    background-color: rgb(198, 194, 194);
+    width: 70vw;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    margin: 15px auto;
+    border-radius: 5px;
+  }
+
+  .product-form-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px;
+  }
+  .product-form-items-items {
+    width: 100%;
+  }
+  .product-form-items-items > label,
+  .product-form-items-items > input {
+    display: block;
+    width: 100%;
+  }
+
+  .product-form-items-items > input[type="file"] {
+    width: 90%;
+  }
+
+  .product-form-items > input[type="submit"] {
+    width: 40%;
+    margin: 0 auto;
+  }
+
+  /*STYLES DEL FORMULARIO DE PRODUCTOS*/
+
+  .product-form > form {
+    display: flex;
+    background-color: rgb(198, 194, 194);
+    width: 70vw;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    margin: 15px auto;
+    border-radius: 5px;
+    padding: 10px 0;
+  }
+
+  .product-form-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px auto;
+    width: 70%;
+  }
+  .product-form-items-items {
+    width: 100%;
+  }
+  .product-form-items-items > label,
+  .product-form-items-items > input {
+    display: block;
+    width: 100%;
+  }
+
+  .product-form-items-items > input[type="file"] {
+    width: 90%;
+  }
+
+  .product-form-items > input[type="submit"] {
+    width: 40%;
+    margin: 0 auto;
   }
 }
 
@@ -457,55 +620,47 @@ footer > p {
     width: 27%;
     margin-bottom: 3vh;
   }
-}
 
-/* CSS LOGIN/REGISTER*/
+  /*STYLES DEL FORMULARIO DE PRODUCTOS*/
 
-.login-container {
-  max-width: 400px;
-  margin: 0 auto;
-  margin-top: 75px;
-  margin-bottom: 75px;
-  padding: 20px;
-  background: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.login-container h2 {
-  text-align: center;
-}
-
-.login-container .form-group {
-  margin: 15px 0;
-}
-
-.login-container label {
-  display: block;
-}
-
-.login-container input[type="text"], .login-container input[type="password"], .login-container input[type="email"] {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.login-container input[type="submit"] {
-  background: var(--cPrimario);
-  color: #fff;
-  border: 0;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.login-container input[type="submit"]:hover {
-  background: var(--cSecundario);
+  .product-form > form {
+    display: flex;
+    background-color: rgb(198, 194, 194);
+    width: 50vw;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    margin: 15px auto;
+    border-radius: 5px;
+    padding: 10px 0;
   }
 
+  .product-form-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px auto;
+    width: 70%;
+  }
+  .product-form-items-items {
+    width: 100%;
+  }
+  .product-form-items-items > label,
+  .product-form-items-items > input {
+    display: block;
+    width: 100%;
+  }
+
+  .product-form-items-items > input[type="file"] {
+    width: 90%;
+  }
+
+  .product-form-items > input[type="submit"] {
+    width: 40%;
+    margin: 0 auto;
+  }
+}
 
 @media (min-width: 1170px) {
   /* CSS MAIN */
@@ -537,4 +692,9 @@ footer > p {
     margin: 5px auto 1vh;
   }
 
+  /*STYLES DEL FORMULARIO DE PRODUCTOS*/
 
+  .product-form > form {
+    width: 40vw;
+  }
+}

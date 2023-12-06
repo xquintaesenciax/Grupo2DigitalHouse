@@ -1,10 +1,10 @@
 const controller = {
   login: (req, res) => {
-    res.render("login");
+    res.render("./user/login");
   },
   register: (req, res) => {
-    res.render("register")
-  }
+    res.render("./user/register");
+  },
 };
 
 module.exports = controller;
