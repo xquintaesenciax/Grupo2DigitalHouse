@@ -2,10 +2,10 @@
 <html lang="en">
   <!DOCTYPE html>
   <html lang="en">
-    <%- include("./partials/head") %>
+    <%- include("../partials/head") %>
     <link rel="stylesheet" href="/css/producto.css" />
     <body>
-      <%- include("./partials/header") %>
+      <%- include("../partials/header") %>
       <div class="product-container">
         <section class="images">
           <div class="thumbnails">
@@ -28,14 +28,7 @@
             <%=producto.cuotas%> cuotas sin interés de
             $<%=producto.precioCuotas%>
           </p>
-          <p>
-            Traje SS 100 con un diseño liso semi satinado. Saco incluye un
-            cuello en V. Con juego de dos botones y tres bolsillos externos. El
-            pantalón es recto, sin pinzas. De tiro medio. Incluye cuatro
-            bolsillos dos laterales y dos traseros. El conjunto es de calce slim
-            fit y de color gris oscuro. Ideal para distintas ocasiones de outfit
-            formal.
-          </p>
+          <p><%=producto.descripcion%></p>
           <p class="color">
             Color:
             <i class="fa-solid fa-droplet" style="color: #373737"></i>
@@ -70,7 +63,7 @@
         </section>
       </div>
 
-      <%- include("./partials/footer") %>
+      <%- include("../partials/footer") %>
     </body>
   </html>
 </html>
