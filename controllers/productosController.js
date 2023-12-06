@@ -32,6 +32,12 @@ const controller = {
   erased: (req, res) => {
     res.send("eliminado");
   },
+  create: (req, res) => {
+    res.render("producto-create")
+  },
+  edit: (req, res) =>{
+    res.render("producto-edit")
+  }
 };
 
 module.exports = controller;
