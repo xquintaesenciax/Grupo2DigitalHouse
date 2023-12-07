@@ -14,8 +14,32 @@ const controller = {
   create: (req, res) => {
     res.render("./product/productoCreate");
   },
-  created: (req, res) => {
-    res.send("creado");
+  created: function (req, res) {
+    let newId = -1;
+
+    for (const objeto of productos) {
+      if (objeto.id > newId) {
+        newId = objeto.id;
+      }
+    }
+    newId++;
+    let newProduct = {
+      id: newId,
+      images: "/img/product/camisa-hombre-1.jpg",
+      nombre: req.body.nombre,
+      descripcion: req.body.descripcion,
+      color: req.body.color,
+      cuotas: req.body.cuotas,
+      precio: req.body.precio,
+      precioConDescuento: null,
+      descuento: null,
+      precioCuotas: null,
+      categoria: req.body.categoria,
+    };
+    productos.push(newProduct);
+    let newProductJson = JSON.stringify(productos);
+    fs.writeFileSync("./data/productos.json", newProductJson);
+    res.redirect("/");
   },
   edit: (req, res) => {
     let producto = productos.filter(
@@ -24,20 +48,35 @@ const controller = {
     res.render("./product/productoUpdate", { producto: producto });
   },
   update: (req, res) => {
-    res.send("actualizado");
+    const updateProduct = productos.map((elemento) => {
+      if (elemento.id == req.params.id) {
+        elemento.nombre = req.body.nombre;
+        elemento.descripcion = req.body.descripcion;
+        elemento.color = req.body.color;
+        elemento.cuotas = req.body.cuotas;
+        elemento.precio = req.body.precio;
+        elemento.categoria = req.body.categoria;
+        return elemento;
+      } else {
+        return elemento;
+      }
+    });
+    console.log(updateProduct);
+    let newProductJson = JSON.stringify(updateProduct);
+    fs.writeFileSync("./data/productos.json", newProductJson);
+    res.redirect("/");
   },
   delete: (req, res) => {
     res.render("./product/productoDelete", { productos: productos });
   },
   erased: (req, res) => {
-    res.send("eliminado");
+    const deleteProduct = productos.filter(
+      (elemento) => elemento.id != req.params.id
+    );
+    let newProductJson = JSON.stringify(deleteProduct);
+    fs.writeFileSync("./data/productos.json", newProductJson);
+    res.redirect("/");
   },
-  create: (req, res) => {
-    res.render("producto-create")
-  },
-  edit: (req, res) =>{
-    res.render("producto-edit")
-  }
 };
 
 module.exports = controller;

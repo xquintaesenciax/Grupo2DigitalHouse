@@ -209,6 +209,7 @@ header {
 .precio-descuento-articulo {
   display: flex;
   margin-top: 5px;
+  overflow: hidden;
 }
 
 .precio-articulo,
@@ -216,6 +217,12 @@ header {
 .precio-sin-descuento {
   margin: 15px;
   width: 25%;
+}
+
+.precio-articulo-1 {
+  color: var(--cSecundario);
+  font-size: 3vh;
+  width: 100%;
 }
 
 .precio-articulo {
