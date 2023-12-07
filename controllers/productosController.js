@@ -54,10 +54,7 @@ const controller = {
         elemento.descripcion = req.body.descripcion;
         elemento.color = req.body.color;
         elemento.cuotas = req.body.cuotas;
-        elemento.precio = null;
-        elemento.precioSinDescuento = req.body.precio;
-        elemento.descuento = null;
-        elemento.precioCuotas = null;
+        elemento.precio = req.body.precio;
         elemento.categoria = req.body.categoria;
         return elemento;
       } else {

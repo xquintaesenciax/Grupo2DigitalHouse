@@ -209,6 +209,7 @@ header {
 .precio-descuento-articulo {
   display: flex;
   margin-top: 5px;
+  overflow: hidden;
 }
 
 .precio-articulo,
