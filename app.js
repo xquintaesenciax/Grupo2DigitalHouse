@@ -2,6 +2,7 @@
 const express = require("express");
 const path = require("path");
 const methodOverride = require("method-override");
+const bodyParser = require("body-parser");
 
 //requires de rutas
 const indexRouter = require("./routes/indexRouter");
@@ -11,6 +12,10 @@ const carritoRouter = require("./routes/carritoRouter");
 
 //creacion de servidor
 const app = express();
+
+//configuracion body-parse
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 //path
 const publicPath = path.resolve(__dirname, "/public");

@@ -218,6 +218,12 @@ header {
   width: 25%;
 }
 
+.precio-articulo-1 {
+  color: var(--cSecundario);
+  font-size: 3vh;
+  width: 100%;
+}
+
 .precio-articulo {
   color: var(--cSecundario);
   font-size: 3vh;
