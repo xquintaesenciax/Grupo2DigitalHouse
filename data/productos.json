@@ -1,1 +1,106 @@
-[{"id":1,"images":"/img/product/camisa-hombre-1.jpg","nombre":"TRAJE SS100 SATÉN","descripcion":"Traje SS 100 con un diseño liso semi satinado. Saco incluye un cuello en V. Con juego de dos botones y tres bolsillos externos. El pantalón es recto, sin pinzas. De tiro medio. Incluye cuatro bolsillos dos laterales y dos traseros. El conjunto es de calce slim fit y de color Marron Oscuro. Ideal para distintas ocasiones de outfit formal.","color":"Marron Oscuro","cuotas":3,"precio":3510,"precioConDescuento":3000,"descuento":17,"precioCuotas":1000,"categoria":"Traje"},{"id":2,"images":"/img/product/camisa-hombre-2.jpg","nombre":"TRAJE SS100 SATÉN","descripcion":"Traje SS 100 con un diseño liso semi satinado. Saco incluye un cuello en V. Con juego de dos botones y tres bolsillos externos. El pantalón es recto, sin pinzas. De tiro medio. Incluye cuatro bolsillos dos laterales y dos traseros. El conjunto es de calce slim fit y de color Bordo Brillante. Ideal para distintas ocasiones de outfit formal.","color":"Bordo Brillante","cuotas":3,"precio":3510,"precioConDescuento":3000,"descuento":17,"precioCuotas":1000,"categoria":"Traje"},{"id":3,"images":"/img/product/camisa-hombre-3.jpg","nombre":"TRAJE SS100 SATÉN","descripcion":"Traje SS 100 con un diseño liso semi satinado. Saco incluye un cuello en V. Con juego de dos botones y tres bolsillos externos. El pantalón es recto, sin pinzas. De tiro medio. Incluye cuatro bolsillos dos laterales y dos traseros. El conjunto es de calce slim fit y de color Marron Claro. Ideal para distintas ocasiones de outfit formal.","color":"Marron Claro","cuotas":3,"precio":3510,"precioConDescuento":3000,"descuento":17,"precioCuotas":1000,"categoria":"Traje"},{"id":4,"images":"/img/product/camisa-hombre-4.jpg","nombre":"TRAJE SS100 SATÉN","descripcion":"Traje SS 100 con un diseño liso semi satinado. Saco incluye un cuello en V. Con juego de dos botones y tres bolsillos externos. El pantalón es recto, sin pinzas. De tiro medio. Incluye cuatro bolsillos dos laterales y dos traseros. El conjunto es de calce slim fit y de color Blanco. Ideal para distintas ocasiones de outfit formal.","color":"Blanco","cuotas":3,"precio":3510,"precioConDescuento":3000,"descuento":17,"precioCuotas":1000,"categoria":"Traje"},{"id":5,"images":"/img/product/camisa-hombre-5.jpg","nombre":"TRAJE SS100 SATÉN","descripcion":"Traje SS 100 con un diseño liso semi satinado. Saco incluye un cuello en V. Con juego de dos botones y tres bolsillos externos. El pantalón es recto, sin pinzas. De tiro medio. Incluye cuatro bolsillos dos laterales y dos traseros. El conjunto es de calce slim fit y de color Purpura. Ideal para distintas ocasiones de outfit formal.","color":"Purpura","cuotas":3,"precio":3510,"precioConDescuento":3000,"descuento":17,"precioCuotas":1000,"categoria":"Traje"},{"id":6,"images":"/img/product/camisa-hombre-6.jpg","nombre":"TRAJE SS100 SATÉN","descripcion":"Traje SS 100 con un diseño liso semi satinado. Saco incluye un cuello en V. Con juego de dos botones y tres bolsillos externos. El pantalón es recto, sin pinzas. De tiro medio. Incluye cuatro bolsillos dos laterales y dos traseros. El conjunto es de calce slim fit y de color Gris. Ideal para distintas ocasiones de outfit formal.","color":"Gris","cuotas":3,"precio":3510,"precioConDescuento":3000,"descuento":17,"precioCuotas":1000,"categoria":"Traje"},{"id":7,"images":"/img/product/camisa-hombre-1.jpg","nombre":"TRAJE SS100 SATÉN","descripcion":"Traje SS 100 con un diseño liso semi satinado. Saco incluye un cuello en V. Con juego de dos botones y tres bolsillos externos. El pantalón es recto, sin pinzas. De tiro medio. Incluye cuatro bolsillos dos laterales y dos traseros. El conjunto es de calce slim fit y de color Marron Oscuro. Ideal para distintas ocasiones de outfit formal.","color":"Marron Oscuro","cuotas":3,"precio":3510,"precioConDescuento":3000,"descuento":17,"precioCuotas":1000,"categoria":"Traje"},{"id":8,"images":"/img/product/camisa-hombre-2.jpg","nombre":"TRAJE SS100 SATÉN","descripcion":"Traje SS 100 con un diseño liso semi satinado. Saco incluye un cuello en V. Con juego de dos botones y tres bolsillos externos. El pantalón es recto, sin pinzas. De tiro medio. Incluye cuatro bolsillos dos laterales y dos traseros. El conjunto es de calce slim fit y de color Bordo Brillante. Ideal para distintas ocasiones de outfit formal.","color":"Bordo Brillante","cuotas":3,"precio":3510,"precioConDescuento":3000,"descuento":17,"precioCuotas":1000,"categoria":"Traje"},{"id":9,"images":"/img/product/camisa-hombre-1.jpg","nombre":"Solana Zeballos ","descripcion":"Es medio tonta pero la amo igual :3","color":"Blanquita como me gusta papiiii","cuotas":"12","precio":"98163551651","precioConDescuento":null,"descuento":null,"precioCuotas":null,"categoria":"pantalon"}]
+[
+  {
+    "id": 1,
+    "images": "/img/product/camisa-hombre-1.jpg",
+    "nombre": "TRAJE SS100 SATÉN",
+    "descripcion": "Traje SS 100 con un diseño liso semi satinado. Saco incluye un cuello en V. Con juego de dos botones y tres bolsillos externos. El pantalón es recto, sin pinzas. De tiro medio. Incluye cuatro bolsillos dos laterales y dos traseros. El conjunto es de calce slim fit y de color Marron Oscuro. Ideal para distintas ocasiones de outfit formal.",
+    "color": "Marron Oscuro",
+    "cuotas": 3,
+    "precio": 3510,
+    "precioConDescuento": 3000,
+    "descuento": 17,
+    "precioCuotas": 1000,
+    "categoria": "Traje"
+  },
+  {
+    "id": 2,
+    "images": "/img/product/camisa-hombre-2.jpg",
+    "nombre": "TRAJE SS100 SATÉN",
+    "descripcion": "Traje SS 100 con un diseño liso semi satinado. Saco incluye un cuello en V. Con juego de dos botones y tres bolsillos externos. El pantalón es recto, sin pinzas. De tiro medio. Incluye cuatro bolsillos dos laterales y dos traseros. El conjunto es de calce slim fit y de color Bordo Brillante. Ideal para distintas ocasiones de outfit formal.",
+    "color": "Bordo Brillante",
+    "cuotas": 3,
+    "precio": 3510,
+    "precioConDescuento": 3000,
+    "descuento": 17,
+    "precioCuotas": 1000,
+    "categoria": "Traje"
+  },
+  {
+    "id": 3,
+    "images": "/img/product/camisa-hombre-3.jpg",
+    "nombre": "TRAJE SS100 SATÉN",
+    "descripcion": "Traje SS 100 con un diseño liso semi satinado. Saco incluye un cuello en V. Con juego de dos botones y tres bolsillos externos. El pantalón es recto, sin pinzas. De tiro medio. Incluye cuatro bolsillos dos laterales y dos traseros. El conjunto es de calce slim fit y de color Marron Claro. Ideal para distintas ocasiones de outfit formal.",
+    "color": "Marron Claro",
+    "cuotas": 3,
+    "precio": 3510,
+    "precioConDescuento": 3000,
+    "descuento": 17,
+    "precioCuotas": 1000,
+    "categoria": "Traje"
+  },
+  {
+    "id": 4,
+    "images": "/img/product/camisa-hombre-4.jpg",
+    "nombre": "TRAJE SS100 SATÉN",
+    "descripcion": "Traje SS 100 con un diseño liso semi satinado. Saco incluye un cuello en V. Con juego de dos botones y tres bolsillos externos. El pantalón es recto, sin pinzas. De tiro medio. Incluye cuatro bolsillos dos laterales y dos traseros. El conjunto es de calce slim fit y de color Blanco. Ideal para distintas ocasiones de outfit formal.",
+    "color": "Blanco",
+    "cuotas": 3,
+    "precio": 3510,
+    "precioConDescuento": 3000,
+    "descuento": 17,
+    "precioCuotas": 1000,
+    "categoria": "Traje"
+  },
+  {
+    "id": 5,
+    "images": "/img/product/camisa-hombre-5.jpg",
+    "nombre": "TRAJE SS100 SATÉN",
+    "descripcion": "Traje SS 100 con un diseño liso semi satinado. Saco incluye un cuello en V. Con juego de dos botones y tres bolsillos externos. El pantalón es recto, sin pinzas. De tiro medio. Incluye cuatro bolsillos dos laterales y dos traseros. El conjunto es de calce slim fit y de color Purpura. Ideal para distintas ocasiones de outfit formal.",
+    "color": "Purpura",
+    "cuotas": 3,
+    "precio": 3510,
+    "precioConDescuento": 3000,
+    "descuento": 17,
+    "precioCuotas": 1000,
+    "categoria": "Traje"
+  },
+  {
+    "id": 6,
+    "images": "/img/product/camisa-hombre-6.jpg",
+    "nombre": "TRAJE SS100 SATÉN",
+    "descripcion": "Traje SS 100 con un diseño liso semi satinado. Saco incluye un cuello en V. Con juego de dos botones y tres bolsillos externos. El pantalón es recto, sin pinzas. De tiro medio. Incluye cuatro bolsillos dos laterales y dos traseros. El conjunto es de calce slim fit y de color Gris. Ideal para distintas ocasiones de outfit formal.",
+    "color": "Gris",
+    "cuotas": 3,
+    "precio": 3510,
+    "precioConDescuento": 3000,
+    "descuento": 17,
+    "precioCuotas": 1000,
+    "categoria": "Traje"
+  },
+  {
+    "id": 7,
+    "images": "/img/product/camisa-hombre-1.jpg",
+    "nombre": "TRAJE SS100 SATÉN",
+    "descripcion": "Traje SS 100 con un diseño liso semi satinado. Saco incluye un cuello en V. Con juego de dos botones y tres bolsillos externos. El pantalón es recto, sin pinzas. De tiro medio. Incluye cuatro bolsillos dos laterales y dos traseros. El conjunto es de calce slim fit y de color Marron Oscuro. Ideal para distintas ocasiones de outfit formal.",
+    "color": "Marron Oscuro",
+    "cuotas": 3,
+    "precio": 3510,
+    "precioConDescuento": 3000,
+    "descuento": 17,
+    "precioCuotas": 1000,
+    "categoria": "Traje"
+  },
+  {
+    "id": 8,
+    "images": "/img/product/camisa-hombre-2.jpg",
+    "nombre": "TRAJE SS100 SATÉN",
+    "descripcion": "Traje SS 100 con un diseño liso semi satinado. Saco incluye un cuello en V. Con juego de dos botones y tres bolsillos externos. El pantalón es recto, sin pinzas. De tiro medio. Incluye cuatro bolsillos dos laterales y dos traseros. El conjunto es de calce slim fit y de color Bordo Brillante. Ideal para distintas ocasiones de outfit formal.",
+    "color": "Bordo Brillante",
+    "cuotas": 3,
+    "precio": 3510,
+    "precioConDescuento": 3000,
+    "descuento": 17,
+    "precioCuotas": 1000,
+    "categoria": "Traje"
+  }
+]
