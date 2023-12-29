@@ -11,15 +11,16 @@ const controller = {
   log: (req, res) => {
     for (let user of users) {
         if (user.email === req.body.email) {
-          console.log(req.body.password, user.password)
           let check = bcrypt.compareSync(req.body.password, user.password);
           if (check){
             res.redirect("/");
           } else{
-            res.send("errorxdxd")
+            let error = "Email o contraseña incorrectos."
+            res.render("./user/login", {error, old: req.body})
           }}
-
-}},
+        }
+        
+  },
   register: (req, res) => {
     res.render("./user/register");
   },
@@ -31,14 +32,14 @@ const controller = {
         apellido: req.body.apellido,
         email: req.body.email,
         username: req.body.username,
-        password: bcrypt.hashSync(req.body.password, 10)
+        password: bcrypt.hashSync(req.body.password, 10),
+        profilePic: req.file.filename
       };
       users.push(newUser);
       let newUsersJson = JSON.stringify(users);
       fs.writeFileSync("./data/users.json", newUsersJson);
       res.redirect("/");
     } else {
-      console.log(errors.mapped())
       res.render("./user/register", {errors: errors.mapped(), old: req.body})
     }
   }

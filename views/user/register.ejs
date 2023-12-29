@@ -7,7 +7,7 @@
     <div class="login-container">
       <h2>Creá tu cuenta</h2>
 
-      <form action="/register" method="post">
+      <form action="/register" method="post" enctype="multipart/form-data">
         <div class="form-group">
           <label for="nombre">Nombre:</label>
           <input type="text" id="nombre" name="nombre" value= "<%= locals.old && old.nombre %>" required />
@@ -42,6 +42,10 @@
           <% if (locals.errors && errors.password) {%>
             <p class="feedback"> <%= errors.password.msg %></p>
           <% } %>
+        </div>
+        <div>
+          <label for="profile-pic">Foto de perfil:</label>
+          <input type="file" id="profile-pic" name="profile-pic">
         </div>
         <div class="form-group">
           <input type="submit" value="Crear cuenta" />
