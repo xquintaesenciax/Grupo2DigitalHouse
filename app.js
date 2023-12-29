@@ -37,7 +37,10 @@ app.get("/", indexRouter);
 app.get("/carrito", carritoRouter);
 //users
 app.get("/login", usersRouter);
+app.post("/login", usersRouter);
 app.get("/register", usersRouter);
+app.post("/register", usersRouter);
+
 
 //PRODUCTOS
 app.get("/productos", productosRouter);

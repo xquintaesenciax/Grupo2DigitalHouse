@@ -103,6 +103,12 @@ header {
   text-align: center;
 }
 
+/* Errores formularios */
+
+.feedback {
+  color: red;
+}
+
 /* NO SE COMO LLAMARLE XD */
 
 .img-inicio {
