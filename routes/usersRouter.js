@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const usersController = require("../controllers/usersController");
 const validateRegister = require("../middlewares/registerValidation")
-const upload = require('../middlewares/multerConfig');
+const upload = require('../middlewares/multerUserConfig');
 
 
 

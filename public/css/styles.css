@@ -11,6 +11,7 @@
 body {
   font-family: "Noto Sans", sans-serif;
   background-color: rgb(238, 235, 235);
+  margin: 0;
 }
 
 * {
@@ -25,15 +26,15 @@ header {
 
 .div-header {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
+
 .items-header {
+  width: 30%;
   display: flex;
   flex-wrap: wrap;
-  width: 45%;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
 }
 
@@ -44,73 +45,96 @@ header {
 .items-menu,
 .items-logo {
   width: 30%;
+  display: flex;
+  justify-content: center;
 }
+
 
 .items-marca {
   width: 40%;
-  color: var(--cPrimario);
-  display: flex;
+  display: none;
   align-items: center;
 }
 
-.items-header > .items-logo > img {
-  /*width: 100%;*/
-  height: 10vh;
+.items-marca > a > p{
+  font-size: larger;
+  text-decoration: none;
+  color: var(--cPrimario);
+}
+
+.items-header > .items-logo > a > img {
+  height: 50px;
   text-align: center;
+}
+
+.items-header-search {
+  width: 70%;
+  display: contents;
+  justify-content:space-around;
+  align-items: center;
+}
+
+.items-header-search .items-submit{
+  height: 100%;
+  margin: 0;
+  margin-right: 5px;
+  width: 10%;
 }
 
 .items-menu {
   text-align: center;
 }
 
-.items-menu > button {
+.items-menu > button,
+.items-submit > button {
   margin: 2.2vh 2vw;
   border: 1px solid #a4a3a3;
   border-radius: 5px;
   background-color: transparent;
 }
 
+.header-search {
+  display: flex;
+  align-items: center;
+}
+
 .items-search {
-  width: 75%;
-  margin: auto;
+  width: 45%; /* Reduzco el ancho para dar más espacio al botón */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .items-search > input {
   width: 100%;
-  margin: 2.2vh auto;
+  padding: 8px; /* Ajusto la altura del input */
   border: 1px solid #a4a3a3;
   border-radius: 5px;
 }
 
 .items-submit {
-  width: 20%;
-  margin: auto;
+  width: 35%; /* Ajusto el ancho del botón */
 }
 
 .items-submit > button {
-  margin: 2.2vh auto;
+  width: 100%;
+  padding: 8px; /* Ajusto la altura del botón */
   border: 1px solid #a4a3a3;
   border-radius: 5px;
+  background-color: var(--cPrimario);
+  color: #fff;
+  cursor: pointer;
 }
 
-.items-header > div,
-.items-header > button,
-.items-header > img {
-  height: 10vh;
+.items-submit > button:hover {
+  background-color: var(--cSecundario);
 }
-
-.items-header > div {
-  text-align: center;
-}
-
 /* Errores formularios */
-
 .feedback {
   color: red;
 }
 
 /* NO SE COMO LLAMARLE XD */
-
 .img-inicio {
   background-color: white;
   text-align: center;
@@ -126,25 +150,27 @@ header {
   background-color: #dedddd;
 }
 
-.texto-inicio {
+.texto-inicio,
+.autor-texto-inicio {
   font-family: sans-serif;
-  height: 15vh;
   width: 100%;
-  font-size: 4vh;
+  margin: 0;
+}
+
+.texto-inicio {
+  height: 15vh;
+  font-size: 3vh;
   text-align: center;
   padding: 2vh 4vw;
-  margin: 0;
 }
 
 .autor-texto-inicio {
   font-size: 3vh;
   text-align: right;
   padding: 1vh 2vw;
-  margin: 0;
 }
 
 /* CSS MAIN */
-
 .main-home {
   width: 90%;
   margin: 0 auto;
@@ -153,7 +179,6 @@ header {
 .seccion-articulo {
   display: flex;
   flex-wrap: wrap;
-  padding: auto;
   justify-content: space-between;
   margin: 20px auto;
 }
@@ -174,14 +199,14 @@ header {
   text-align: center;
 }
 
-.item-img > img {
-  height: 23vh;
-  width: 100%;
-}
 
 .item-img {
   width: 80%;
   margin: 0 auto 1vh;
+}
+
+.item-img img {
+  width: 100%;
 }
 
 .item-descripcion {
@@ -195,17 +220,22 @@ header {
   margin: 0;
 }
 
+.nombre-articulo,
+.div-button-descripcion > button {
+  width: 100%;
+}
+
 .nombre-articulo {
   border-top: 2px solid rgb(148, 148, 148);
   padding-top: 1vh;
+  text-decoration: none;
+  color: black;
 }
 
 .div-button-descripcion > button {
   background-color: var(--cPrimario);
   color: #fff;
   display: block;
-  font-size: 1.8vh;
-  height: 4vh;
   width: 85%;
   margin: 5px auto 0;
   border: none;
@@ -221,19 +251,16 @@ header {
 .precio-articulo,
 .descuento-articulo,
 .precio-sin-descuento {
-  margin: 15px;
-  width: 25%;
+  margin: 10px;
+  width: 33%;
 }
 
-.precio-articulo-1 {
-  color: var(--cSecundario);
-  font-size: 3vh;
-  width: 100%;
-}
-
+.precio-articulo-1,
 .precio-articulo {
   color: var(--cSecundario);
-  font-size: 3vh;
+  font-size: ;
+  width: 100%;
+  font-size: 4vw;
 }
 
 .cuotas-articulo {
@@ -242,19 +269,20 @@ header {
 
 .descuento-articulo {
   background-color: var(--calgo2);
-  font-size: 1.5vh;
+  color: white;
+  font-size: 2vw;
   margin: auto;
   border-radius: 2px;
 }
 
 .precio-sin-descuento {
-  font-size: 1.8vh;
+  font-size: 2vw;
+  text-decoration: line-through;
   margin: auto;
   color: rgb(132, 132, 132);
 }
 
 /* CSS FOOTER */
-
 footer {
   background-color: white;
   margin: 0 auto;
@@ -281,8 +309,7 @@ footer > p {
   text-align: center;
 }
 
-/* CSS LOGIN/REGISTER*/
-
+/* CSS LOGIN/REGISTER */
 .login-container {
   max-width: 400px;
   margin: 0 auto;
@@ -330,8 +357,7 @@ footer > p {
   background: var(--cSecundario);
 }
 
-/*STYLES DEL FORMULARIO DE PRODUCTOS*/
-
+/* STYLES DEL FORMULARIO DE PRODUCTOS */
 .product-form > form {
   display: flex;
   background-color: rgb(198, 194, 194);
@@ -343,16 +369,18 @@ footer > p {
   border-radius: 5px;
 }
 
-.product-form-items {
+.product-form-items,
+.product-form-items-items {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  flex-direction: column;
   margin: 10px;
 }
+
 .product-form-items-items {
   width: 100%;
 }
+
 .product-form-items-items > label,
 .product-form-items-items > input {
   display: block;
@@ -368,346 +396,195 @@ footer > p {
   margin: 0 auto;
 }
 
-@media (min-width: 375px) {
-  /* NO SE COMO LLAMARLE XD*/
 
-  .item-img > img {
-    height: 28vh;
+  @media (min-width: 768px) {
+    /* CSS HEADER */
+    .items-menu{
+      display: none;
+    }
+    .items-marca{
+      display: block;
+    }
+
+    .items-header{
+      width: 20%;
+    }
+    .items-header-search {
+      width: 40%;
+      display: flex;
+    }
+  
+    .items-search {
+      width: 85%;
+    }
+  
+    .items-submit {
+      width: 15%;
+    }
+  
+    .items-header-link {
+      display: flex;
+      width: 40%;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+    .items-header-link a{
+      text-decoration: none;
+      color: black
+    }
+  
+    /* NO SE COMO LLAMARLE XD */
+    .img-inicio > img {
+      height: 50vh;
+      width: 50%;
+      margin: 2vh 0;
+    }
+  
+    .texto-inicio {
+      font-size: 5vh;
+    }
+  
+    /* CSS MAIN */
+    .precio-descuento-articulo .precio-sin-descuento, .descuento-articulo{
+      font-size: 2vw;
+    }
+    .precio-descuento-articulo .precio-articulo, .precio-articulo-1{
+      font-size: 3vw;
+    }
+    .item-img > img {
+      height: 33vh;
+    }
+  
+    .item-articulo {
+      width: 30%;
+    }
+  
+    .div-button-descripcion > button {
+      width: 70%;
+    }
+  
+    /* CSS FOOTER */
+    .footer-div {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  
+    .footer-items {
+      background-color: #dedddd;
+      border-radius: 10px;
+      text-align: center;
+      width: 30%;
+      margin: 30px auto;
+      padding: 20px;
+    }
   }
+  
+  @media (min-width: 1024px) {
+    /* NO SE COMO LLAMARLE XD */
+    .img-inicio > img {
+      height: 65vh;
+      width: 40%;
+    }
+  
+    .eslogan {
+      width: 70%;
+      margin: 5vh auto;
+      border-radius: 10px;
+    }
+  
+    .texto-inicio {
+      font-size: 6vh;
+    }
+  
+    /* CSS MAIN */
+    .item-img > img {
+      height: 40vh;
+    }
+  
+    .div-button-descripcion > button {
+      height: 5vh;
+      width: 60%;
+    }
+  
+    .precio-descuento-articulo {
+      display: flex;
+      margin-top: 5px;
+      width: 90%;
+      margin: 5px auto;
+    }
 
-  /* CSS MAIN */
-
-  .precio-articulo,
-  .descuento-articulo,
-  .precio-sin-descuento {
-    width: 27%;
+    .precio-descuento-articulo .precio-sin-descuento, .descuento-articulo{
+      font-size: 1vw;
+    }
+    .precio-descuento-articulo .precio-articulo, .precio-articulo-1{
+      font-size: 1.5vw;
+    }
+  
+    .item-articulo {
+      width: 23%;
+      margin-bottom: 3vh;
+    }
+  
+    /* STYLES DEL FORMULARIO DE PRODUCTOS */
+    .product-form > form {
+      display: flex;
+      background-color: rgb(198, 194, 194);
+      width: 50vw;
+      flex-wrap: wrap;
+      justify-content: center;
+      flex-direction: column;
+      margin: 15px auto;
+      border-radius: 5px;
+      padding: 10px 0;
+    }
+  
+    .product-form-items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      flex-direction: column;
+      margin: 10px auto;
+      width: 70%;
+    }
+  
+    .product-form-items-items > input[type="file"] {
+      width: 90%;
+    }
+  
+    .product-form-items > input[type="submit"] {
+      width: 40%;
+      margin: 0 auto;
+    }
   }
-
-  .precio-descuento-articulo {
-    width: 95%;
-    margin: auto;
+  
+  @media (min-width: 1170px) {
+    /* CSS MAIN */
+    .item-img > img {
+      height: 35vh;
+      width: 100%;
+    }
+  
+  
+    /* NO SE COMO LLAMARLE XD */
+    .texto-inicio {
+      font-size: 7vh;
+    }
   }
-}
-
-@media (min-width: 475px) {
-  /* CSS HEADER */
-
-  .items-header-menu-logo {
-    display: flex;
-    width: 20%;
-    margin: 0 auto;
+  
+  @media (min-width: 1220px) {
+    /* CSS MAIN */
+    .item-img > img {
+      height: 45vh;
+      width: 100%;
+    }
+  
+    .div-button-descripcion > button {
+      margin: 5px auto 1vh;
+    }
+  
+    /* STYLES DEL FORMULARIO DE PRODUCTOS */
+    .product-form > form {
+      width: 40vw;
+    }
   }
-
-  .items-logo {
-    width: 45%;
-  }
-
-  .items-marca {
-    width: 55%;
-  }
-
-  .items-header-search {
-    display: flex;
-    width: 40%;
-    margin: 0 auto;
-  }
-
-  .items-header-link {
-    display: flex;
-    flex-wrap: wrap;
-    width: 30%;
-    margin: 0 auto;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .items-header-link > a {
-    width: 30%;
-    text-decoration: none;
-    color: #000;
-    text-align: center;
-  }
-
-  .login {
-    width: 30%;
-  }
-
-  .register {
-    width: 35%;
-    text-align: center;
-  }
-
-  /*.carrito {
-    width: 20%;
-  }*/
-
-  .items-menu {
-    display: none;
-  }
-
-  /* CSS MAIN */
-
-  .item-img > img {
-    height: 33vh;
-  }
-
-  .precio-descuento-articulo {
-    width: 68%;
-  }
-
-  .product-form > form {
-    display: flex;
-    background-color: rgb(198, 194, 194);
-    width: 70vw;
-    flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: column;
-    margin: 15px auto;
-    border-radius: 5px;
-  }
-
-  .product-form-items {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: column;
-    margin: 10px;
-  }
-  .product-form-items-items {
-    width: 100%;
-  }
-  .product-form-items-items > label,
-  .product-form-items-items > input {
-    display: block;
-    width: 100%;
-  }
-
-  .product-form-items-items > input[type="file"] {
-    width: 90%;
-  }
-
-  .product-form-items > input[type="submit"] {
-    width: 40%;
-    margin: 0 auto;
-  }
-
-  /*STYLES DEL FORMULARIO DE PRODUCTOS*/
-
-  .product-form > form {
-    display: flex;
-    background-color: rgb(198, 194, 194);
-    width: 70vw;
-    flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: column;
-    margin: 15px auto;
-    border-radius: 5px;
-    padding: 10px 0;
-  }
-
-  .product-form-items {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: column;
-    margin: 10px auto;
-    width: 70%;
-  }
-  .product-form-items-items {
-    width: 100%;
-  }
-  .product-form-items-items > label,
-  .product-form-items-items > input {
-    display: block;
-    width: 100%;
-  }
-
-  .product-form-items-items > input[type="file"] {
-    width: 90%;
-  }
-
-  .product-form-items > input[type="submit"] {
-    width: 40%;
-    margin: 0 auto;
-  }
-}
-
-@media (min-width: 768px) {
-  /* CSS HEADER */
-
-  .items-header-search {
-    width: 45%;
-  }
-
-  .items-search {
-    width: 80%;
-  }
-
-  .items-submit {
-    width: 15%;
-  }
-
-  .items-header-link {
-    width: 20%;
-  }
-
-  /* NO SE COMO LLAMARLE XD */
-
-  .img-inicio > img {
-    height: 50vh;
-    width: 50%;
-    margin: 2vh 0;
-  }
-
-  .texto-inicio {
-    font-size: 5vh;
-  }
-
-  /* CSS MAIN */
-
-  .item-img > img {
-    height: 33vh;
-  }
-
-  .item-articulo {
-    width: 30%;
-  }
-
-  .div-button-descripcion > button {
-    width: 70%;
-  }
-
-  /* CSS FOOTER */
-
-  .footer-div {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .footer-items {
-    background-color: #dedddd;
-    border-radius: 10px;
-    text-align: center;
-    width: 30%;
-    margin: 30px auto;
-    padding: 20px;
-  }
-}
-
-@media (min-width: 1024px) {
-  /* NO SE COMO LLAMARLE XD */
-
-  .img-inicio > img {
-    height: 65vh;
-    width: 40%;
-  }
-
-  .eslogan {
-    width: 70%;
-    margin: 5vh auto;
-    border-radius: 10px;
-  }
-  .texto-inicio {
-    font-size: 6vh;
-  }
-
-  /* CSS MAIN */
-
-  .item-img > img {
-    height: 40vh;
-  }
-
-  .div-button-descripcion > button {
-    height: 5vh;
-    width: 60%;
-  }
-
-  .precio-descuento-articulo {
-    display: flex;
-    margin-top: 5px;
-    width: 62%;
-    margin: 5px auto;
-  }
-
-  .item-articulo {
-    width: 27%;
-    margin-bottom: 3vh;
-  }
-
-  /*STYLES DEL FORMULARIO DE PRODUCTOS*/
-
-  .product-form > form {
-    display: flex;
-    background-color: rgb(198, 194, 194);
-    width: 50vw;
-    flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: column;
-    margin: 15px auto;
-    border-radius: 5px;
-    padding: 10px 0;
-  }
-
-  .product-form-items {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: column;
-    margin: 10px auto;
-    width: 70%;
-  }
-  .product-form-items-items {
-    width: 100%;
-  }
-  .product-form-items-items > label,
-  .product-form-items-items > input {
-    display: block;
-    width: 100%;
-  }
-
-  .product-form-items-items > input[type="file"] {
-    width: 90%;
-  }
-
-  .product-form-items > input[type="submit"] {
-    width: 40%;
-    margin: 0 auto;
-  }
-}
-
-@media (min-width: 1170px) {
-  /* CSS MAIN */
-
-  .item-img > img {
-    height: 35vh;
-    width: 100%;
-  }
-
-  .item-articulo {
-    width: 23%;
-  }
-
-  /* NO SE COMO LLAMARLE XD */
-  .texto-inicio {
-    font-size: 7vh;
-  }
-}
-
-@media (min-width: 1220px) {
-  /* CSS MAIN */
-
-  .item-img > img {
-    height: 45vh;
-    width: 100%;
-  }
-
-  .div-button-descripcion > button {
-    margin: 5px auto 1vh;
-  }
-
-  /*STYLES DEL FORMULARIO DE PRODUCTOS*/
-
-  .product-form > form {
-    width: 40vw;
-  }
-}

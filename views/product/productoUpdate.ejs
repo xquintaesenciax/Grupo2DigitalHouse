@@ -6,111 +6,66 @@
 
     <main>
       <div class="product-form">
-        <form method="POST" action="/productos/<%=producto.id%>?_method=PUT">
+        <form method="POST" action="/productos/<%= producto.id %>?_method=PUT" enctype="multipart/form-data">
           <div class="product-form-items">
-            <div class="product-form-items-items">
-              <label for="nombre">Nombre del producto</label>
-            </div>
-            <div class="product-form-items-items">
-              <input
-                type="text"
-                name="nombre"
-                id="nombre"
-                value="<%=producto.nombre%>"
-              />
-            </div>
+            <label for="nombre">Nombre del producto</label>
+            <input type="text" name="nombre" id="nombre" value="<%= producto.nombre %>" />
+          </div>
+    
+          <div class="product-form-items">
+            <label for="descripcion">Descripción</label>
+            <input type="text" name="descripcion" id="descripcion" value="<%= producto.descripcion %>" />
+          </div>
+    
+          <div class="product-form-items">
+            <label for="imagenes">Imágenes</label>
+            <input type="file" name="imagen" id="imagenes" />
+          </div>
+    
+          <div class="product-form-items">
+            <label for="categoria">Categoría</label>
+            <select name="categoria" id="categoria">
+              <option value="<%= producto.categoria %>"><%= producto.categoria %></option>
+              <option value="pantalon">Pantalón</option>
+              <option value="traje">Traje</option>
+              <option value="chaleco">Chaleco</option>
+              <option value="camisa">Camisa</option>
+            </select>
+          </div>
+    
+          <div class="product-form-items">
+            <label for="color">Color</label>
+            <input type="text" name="color" id="color" value="<%= producto.color %>" />
+          </div>
+    
+          <div class="product-form-items">
+            <label for="precio">Precio</label>
+            <input type="text" name="precio" id="precio" value="<%= producto.precio %>" />
           </div>
 
           <div class="product-form-items">
-            <div class="product-form-items-items">
-              <label for="descripcion">Descripcion</label>
-            </div>
-            <div class="product-form-items-items">
-              <input
-                type="text"
-                name="descripcion"
-                id="descripcion"
-                value="<%=producto.descripcion%>"
-              />
-            </div>
+            <label for="descuento">Descuento (%)</label>
+            <input type="text" name="descuento" id="descuento" />
           </div>
-
+    
           <div class="product-form-items">
-            <div class="product-form-items-items">
-              <label for="imagenes">Imagenes</label>
-            </div>
-            <div class="product-form-items-items">
-              <input type="file" name="imagenes" id="imagenes" multiple />
-            </div>
+            <label for="cuotas">Cuotas</label>
+            <select name="cuotas" id="cuotas">
+              <option value="<%= producto.cuotas %>"><%= producto.cuotas %></option>
+              <option value="3">3</option>
+              <option value="6">6</option>
+              <option value="9">9</option>
+              <option value="12">12</option>
+            </select>
           </div>
-
-          <div class="product-form-items">
-            <div class="product-form-items-items">
-              <label for="categoria">Categoria</label>
-            </div>
-            <div class="product-form-items-items">
-              <select
-                name="categoria"
-                id="categoria""
-              >
-                <option value="<%=producto.categoria%>"><%=producto.categoria%></option>
-                <option value="pantalon">Pantalon</option>
-                <option value="traje">Traje</option>
-                <option value="chaleco">Chaleco</option>
-                <option value="camisa">Camisa</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="product-form-items">
-            <div class="product-form-items-items">
-              <label for="color">Color</label>
-            </div>
-            <div class="product-form-items-items">
-              <input
-                type="text"
-                name="color"
-                id="color"
-                value="<%=producto.color%>"
-              />
-            </div>
-          </div>
-
-          <div class="product-form-items">
-            <div class="product-form-items-items">
-              <label for="precio">Precio</label>
-            </div>
-            <div class="product-form-items-items">
-              <input
-                type="text"
-                name="precio"
-                id="precio"
-                value="<%=producto.precio%>"
-              />
-            </div>
-          </div>
-
-          <div class="product-form-items">
-            <div class="product-form-items-items">
-              <label for="cuotas">Cuotas</label>
-            </div>
-            <div class="product-form-items-items">
-              <select name="cuotas" id="cuotas">
-                <option value="<%=producto.cuotas%>"><%=producto.cuotas%></option>
-                <option value="3">3</option>
-                <option value="6">6</option>
-                <option value="9">9</option>
-                <option value="12">12</option>
-              </select>
-            </div>
-          </div>
-
+    
           <div class="product-form-items">
             <input type="submit" value="Enviar" />
           </div>
         </form>
       </div>
     </main>
+    
 
     <%-include("../partials/footer")%>
   </body>

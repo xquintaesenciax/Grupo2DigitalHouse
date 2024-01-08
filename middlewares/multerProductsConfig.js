@@ -4,14 +4,13 @@ const fs = require("fs")
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    const uploadPath = 'public/img/uploads'; // Ruta relativa a tu directorio de trabajo
-    // Crea las carpetas necesarias si no existen
+    const uploadPath = 'public/img/product';
     const fullPath = path.join(__dirname, uploadPath);
     fs.mkdirSync(fullPath, { recursive: true });
     cb(null, uploadPath);
   },
   filename: function (req, file, cb) {
-    cb(null, 'profile-pic-' + Date.now() + path.extname(file.originalname));
+    cb(null, 'product' + Date.now() + path.extname(file.originalname));
   }
 });
 

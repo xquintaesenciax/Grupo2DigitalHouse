@@ -10,15 +10,15 @@
       <form action="/login" method="post">
         <div class="form-group">
           <label for="email">Email:</label>
-          <input type="email" id="email" name="email" value="<%= old.email %>" required />
+          <input type="email" id="email" name="email" value="<%= typeof old !== 'undefined' && old ? old.email : '' %>" required />
         </div>
         <div class="form-group">
           <label for="password">Contraseña:</label>
-          <input type="password" id="password" name="password" value="<%= old.password %>" required />
+          <input type="password" id="password" name="password" value="<%= typeof old !== 'undefined' && old ? old.password : '' %>" required />
         </div>
         <% if (typeof error !== 'undefined' && error !== null) { %>
           <p class="feedback"><%= error %></p>
-      <% } %>
+        <% } %>
         <div class="form-group">
           <input type="submit" value="Iniciar Sesión" />
         </div>
