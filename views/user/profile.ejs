@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include("../partials/head") %>
+
+<body>
+
+    <%- include("../partials/header") %>
+
+    <h1 class="user-name">Editar perfil</h1>
+
+    <div class="profile-body">
+        <section class="profile-info">
+            <div class="profile-container">
+                <div class="profile-pic">
+                    <img src="<%= user.profilePic %>" alt="Imagen de Perfil">
+                </div>
+                <a class="log-out" href="/log-out"><p><i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión</p></a>
+            </div>
+            
+    
+            <div class="datos">
+                <form action="/editar-perfil" method="POST" enctype="multipart/form-data">
+                    <div>
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" value="<%= user.nombre %>" required>
+                    </div>
+            
+                    <div>
+                        <label for="apellido">Apellido:</label>
+                        <input type="text" id="apellido" name="apellido" value="<%= user.apellido %>" required>
+                    </div>
+            
+                    <div>
+                        <label for="email">Correo electrónico:</label>
+                        <input type="email" id="email" name="email" value="<%= user.email %>" required>
+                    </div>
+            
+                    <div>
+                        <label for="username">Nombre de usuario:</label>
+                        <input type="text" id="username" name="username" value="<%= user.username %>" required>
+                    </div>
+            
+                    <div>
+                        <label for="password">Nueva Contraseña:</label>
+                        <input type="password" id="password" name="password" placeholder="Cambiar contraseña">
+                    </div>
+            
+                    <div>
+                        <label for="profilepic">Foto de Perfil:</label>
+                        <br><input type="file" id="profilepic" name="profilepic">
+                    </div>
+            
+                    <div>
+                        <button type="submit">Guardar Cambios</button>
+                    </div>
+                </form>
+            </div>
+            
+            </div>
+    
+        </section>
+    </div>
+
+    <%- include("../partials/footer") %>
+
+</body>
+</html>

@@ -10,8 +10,9 @@
       <form action="/login" method="post">
         <div class="form-group">
           <label for="email">Email:</label>
-          <input type="email" id="email" name="email" value="<%= typeof old !== 'undefined' && old ? old.email : '' %>" required />
+          <input type="email" id="email" name="email" value="<%= typeof email !== 'undefined' ? email : (typeof old !== 'undefined' && old ? old.email : '') %>" required />
         </div>
+        
         <div class="form-group">
           <label for="password">Contraseña:</label>
           <input type="password" id="password" name="password" value="<%= typeof old !== 'undefined' && old ? old.password : '' %>" required />
@@ -27,3 +28,5 @@
     <%- include("../partials/footer") %>
   </body>
 </html>
+
+

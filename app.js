@@ -3,6 +3,8 @@ const express = require("express");
 const path = require("path");
 const methodOverride = require("method-override");
 const bodyParser = require("body-parser");
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
 
 //requires de rutas
 const indexRouter = require("./routes/indexRouter");
@@ -17,9 +19,18 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+
 //path
 const publicPath = path.resolve(__dirname, "/public");
 app.use(express.static("public"));
+
+// Configuración de cookie-parser y express-session
+app.use(cookieParser());
+app.use(session({
+  secret: 'velvet owo',
+  resave: false,
+  saveUninitialized: true
+}));
 
 //alta de servidor puerto 3030
 app.listen(3030, () => console.log("El puerto de inicio es: 3030"));
@@ -40,6 +51,9 @@ app.get("/login", usersRouter);
 app.post("/login", usersRouter);
 app.get("/register", usersRouter);
 app.post("/register", usersRouter);
+app.get("/profile", usersRouter);
+app.post("/editar-perfil", usersRouter);
+app.get("/log-out", usersRouter);
 
 
 //PRODUCTOS

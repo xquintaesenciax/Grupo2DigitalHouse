@@ -19,10 +19,10 @@
       <p class="autor-texto-inicio">- Audrey Hepburn</p>
     </div>
     <main class="main-home">
+        <a class="section-title" href="/productos/descuentos"><h2>DESCUENTOS</h2></a>
       <section class="seccion-articulo">
-        <h2>DESCUENTOS</h2>
 
-        <% for(let i = 0; i < 8; i++) { %>
+        <% for(let i = 0; i < 4; i++) { %>
           <article class="item-articulo">
               <div class="item-img">
                   <a href="/productos/<%= productos[i].id %>">
@@ -53,10 +53,10 @@
 
       </section>
 
+      <a class="section-title" href="/productos/populares"><h2>MAS POPULARES</h2></a>
       <section class="seccion-articulo">
-        <h2>MAS POPULARES</h2>
 
-        <% for(let i = 0; i < 8; i++) { %>
+        <% for(let i = 0; i < 4; i++) { %>
           <article class="item-articulo">
               <div class="item-img">
                   <a href="/productos/<%= productos[i].id %>">
@@ -84,6 +84,40 @@
               </div>
           </article>
       <% } %>
+
+      </section>
+
+      <a class="section-title" href="/productos"><h2>TODOS LOS PRODUCTOS</h2></a>
+      <section class="seccion-articulo">
+
+        <% for(let i = 0; i < 4; i++) { %>
+          <article class="item-articulo">
+              <div class="item-img">
+                  <a href="/productos/<%= productos[i].id %>">
+                      <img src="<%= productos[i].images %>" alt="imagen-producto" />
+                  </a>
+              </div>
+              <div class="item-descripcion">
+                  <a href="/productos/<%= productos[i].id %>">
+                      <p class="nombre-articulo"><%= productos[i].nombre %></p>
+                  </a>
+                  <p class="descripcion-articulo"><%= productos[i].color %></p>
+                  <p class="cuotas-articulo"><%= productos[i].cuotas %> cuotas sin interes</p>
+                  <div class="precio-descuento-articulo">
+                      <% if(productos[i].descuento === null) { %>
+                          <p class="precio-articulo">$<%= productos[i].precio %></p>
+                      <% } else { %>
+                          <p class="precio-sin-descuento">$<%= productos[i].precio %></p>
+                          <p class="precio-articulo">$<%= productos[i].precioConDescuento %></p>
+                          <p class="descuento-articulo"><%= productos[i].descuento %>% off</p>
+                      <% } %>
+                  </div>
+                  <div class="div-button-descripcion">
+                      <button>Agregar al carrito</button>
+                  </div>
+              </div>
+          </article>
+      <% } %>  
 
       </section>
     </main>

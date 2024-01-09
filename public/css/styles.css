@@ -129,6 +129,37 @@ header {
 .items-submit > button:hover {
   background-color: var(--cSecundario);
 }
+/* HEADER LOGEADO*/
+
+.loged-header{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 30%;
+}
+
+.profile-pic-container{
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.profile-pic {
+  width: 100%;
+}
+
+.bienvenida {
+  text-decoration: none;
+  color: black;
+  display: none;
+}
+
+.fa-cart-shopping {
+  text-decoration: none;
+  color: black;
+}
+
 /* Errores formularios */
 .feedback {
   color: red;
@@ -189,8 +220,15 @@ header {
   font-size: 3vh;
 }
 
+.section-title{
+  text-decoration: none;
+  color: var(--cPrimario);
+  font-weight: bold;
+}
+
 .item-articulo {
   box-shadow: 0px 0px 10px rgb(100, 100, 100);
+  background-color: white;
   width: 45%;
   margin-bottom: 10px;
   padding: 10px;
@@ -280,6 +318,87 @@ header {
   text-decoration: line-through;
   margin: auto;
   color: rgb(132, 132, 132);
+}
+
+/* PERFIL DEL USUARIO */
+
+.user-name{
+  text-align: center;
+}
+
+.profile-body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-info{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 70vw;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+.profile-info .profile-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-info .profile-pic {
+    position: relative;
+    width: 15vw;
+    height: 15vw;
+    overflow: hidden;
+    border: solid 1vw var(--cSecundario);
+    border-radius: 50%;
+}
+
+.profile-info .profile-pic img {
+  width: 100%;
+  height: auto;
+}
+
+.profile-info .log-out{
+  text-decoration: none;
+  color: var(--cPrimario);
+}
+
+.profile-info .datos{
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  max-width: 90%;
+}
+
+.profile-info .datos input[type="text"],
+.profile-info .datos input[type="password"],
+.profile-info .datos input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.profile-info .datos button[type="submit"] {
+  margin: 10px;
+  background: var(--cPrimario);
+  color: #fff;
+  border: 0;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.profile-info .datos input[type="submit"]:hover {
+  background: var(--cSecundario);
 }
 
 /* CSS FOOTER */
@@ -485,6 +604,10 @@ footer > p {
     .img-inicio > img {
       height: 65vh;
       width: 40%;
+    }
+
+    .bienvenida {
+      display: block;
     }
   
     .eslogan {
