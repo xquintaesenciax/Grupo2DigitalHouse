@@ -89,21 +89,32 @@ const controller = {
         if (user) {
             const { nombre, apellido, email, username } = req.body;
 
+            // Actualizar los datos del usuario en la sesión
             user.nombre = nombre;
             user.apellido = apellido;
             user.email = email;
             user.username = username;
 
             if (req.body.password) {
+                // Actualizar la contraseña si se proporciona una nueva
                 user.password = bcrypt.hashSync(req.body.password, 10);
             }
 
             if (req.file) {
+                // Actualizar la imagen de perfil si se proporciona una nueva
                 const imagePath = `/img/users/uploads/${req.file.filename}`;
                 user.profilePic = imagePath;
             }
 
+            // Actualizar el usuario en el array de usuarios
+            const userIndex = users.findIndex(u => u.email === user.email);
+            users[userIndex] = user;
+
+            // Guardar el array actualizado en el archivo JSON
+            fs.writeFileSync("./data/users.json", JSON.stringify(users));
+
             req.session.user = user;
+
             return res.redirect("/profile");
         } else {
             console.error("El objeto 'user' no está definido.");
@@ -116,10 +127,10 @@ const controller = {
         return res.status(500).send("Error interno del servidor al actualizar el perfil");
     }
 },
-
-
-  
 };
+
+
+
 
 module.exports = controller;
 
