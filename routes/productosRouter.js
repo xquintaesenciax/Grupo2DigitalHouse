@@ -1,22 +1,34 @@
 const express = require("express");
 const router = express.Router();
 const productosController = require("../controllers/productosController");
-const upload = require('../middlewares/multerProductsConfig');
+const upload = require("../middlewares/multerProductsConfig");
 const bodyParser = require("body-parser");
 
 const urlencodedParser = bodyParser.urlencoded({ extended: true });
 
-router.get("/productos", productosController.productos);
-router.get("/productos/create", productosController.create);
+router.get("/", productosController.productos);
+router.get("/create", productosController.create);
 
-router.post("/productos/created", urlencodedParser, upload.single("imagen"), productosController.created);
+router.post(
+  "/created",
+  urlencodedParser,
+  upload.single("imagen"),
+  productosController.created
+);
 
-router.get("/productos/:id/edit", productosController.edit);
-router.get("/productos/delete", productosController.delete);
-router.get("/productos/:id", productosController.detail);
+router.post("/search", productosController.search);
 
-router.put("/productos/:id", urlencodedParser, upload.single("imagen"), productosController.update);
+router.get("/delete", productosController.delete);
+router.get("/:id/edit", productosController.edit);
+router.get("/:id", productosController.detail);
 
-router.delete("/productos/:id", productosController.erased);
+router.put(
+  "/:id",
+  urlencodedParser,
+  upload.single("imagen"),
+  productosController.update
+);
+
+router.delete("/:id", productosController.erased);
 
 module.exports = router;

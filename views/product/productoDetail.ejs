@@ -16,8 +16,18 @@
             <img class="thumbnail" src="/img/productos/miniatura5.png" />
           </div>
 
+          <!--IMAGEN PRINCIPAL SIN BASE DE DATOS
           <div class="main-image">
             <img id="main-image" src="<%=producto.images%>" />
+          </div> -->
+
+          <!-- IMAGEN PRINCIPAL CON BASE DE DATOS -->
+          <div class="main-image">
+            <img
+              id="main-image"
+              src="/img/product/<%= producto.images %>"
+              alt="imagen-producto"
+            />
           </div>
         </section>
 

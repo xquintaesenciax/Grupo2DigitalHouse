@@ -6,17 +6,16 @@
     <%- include("../partials/header") %>
 
     <main class="main-home">
+      <h1 class="section-title">RESULTADOS DE LA BUSQUEDA '<%=busqueda%>'</h1>
       <section class="seccion-articulo">
-        <h2 class="section-title">TODOS LOS PRODUCTOS</h2>
-
         <% for(let i = 0; i < productos.length; i++) { %>
         <article class="item-articulo">
           <!-- IMAGEN SIN BASE DE DATOS
-                  <div class="item-img">
-                      <a href="/productos/<%= productos[i].id %>">
-                          <img src="<%= productos[i].images %>" alt="imagen-producto" />
-                      </a>
-                  </div> -->
+                          <div class="item-img">
+                              <a href="/productos/<%= productos[i].id %>">
+                                  <img src="<%= productos[i].images %>" alt="imagen-producto" />
+                              </a>
+                          </div> -->
 
           <!-- IMAGEN CON BASE DE DATOS -->
           <div class="item-img">
@@ -57,7 +56,6 @@
         <% } %>
       </section>
     </main>
-
     <%- include("../partials/footer") %>
   </body>
 </html>
