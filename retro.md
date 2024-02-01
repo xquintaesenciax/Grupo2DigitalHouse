@@ -28,7 +28,27 @@ Utilizar más y nmejor el Trello
 Comunicacion por distintos canales
 
 4- Hacer menos
-------
+.....
 
 5- Dejar de hacer
 Procrastinar las tareas
+
+------------------------------------------
+
+Retro 1/2/2024
+
+1 - Comenzar a hacer
+más trabajo en equipo
+
+2- Hacer más
+Ordenar mejor los tiempos
+Reunirse para armar el tablero de trabajo y planear mejor los sprints
+
+3- Continuar haciendo
+Comunicacion por distintos canales
+
+4- Hacer menos
+Dejar las tareas para el último momento
+
+5- Dejar de hacer
+Desaparecerse 
