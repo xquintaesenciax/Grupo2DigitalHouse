@@ -92,34 +92,41 @@ const controller = {
       const user = req.session.user;
       console.log(user);
 
-      // Verificar si el usuario está definido
-      if (user) {
-        const { nombre, apellido, email, username } = req.body;
-        //EVALUAR ESTA PORCION DE CODIGO
-        //recomendacion-->usar map()
-        user.nombre = nombre;
-        user.apellido = apellido;
-        user.email = email;
-        user.username = username;
+        // Verificar si el usuario está definido
+        if (user) {
+            const { nombre, apellido, email, username } = req.body;
 
-        console.log(user);
-        if (req.body.password) {
-          user.password = bcrypt.hashSync(req.body.password, 10);
+            // Actualizar los datos del usuario en la sesión
+            user.nombre = nombre;
+            user.apellido = apellido;
+            user.email = email;
+            user.username = username;
+
+            if (req.body.password) {
+                // Actualizar la contraseña si se proporciona una nueva
+                user.password = bcrypt.hashSync(req.body.password, 10);
+            }
+
+            if (req.file) {
+                // Actualizar la imagen de perfil si se proporciona una nueva
+                const imagePath = `/img/users/uploads/${req.file.filename}`;
+                user.profilePic = imagePath;
+            }
+
+            // Actualizar el usuario en el array de usuarios
+            const userIndex = users.findIndex(u => u.email === user.email);
+            users[userIndex] = user;
+
+            // Guardar el array actualizado en el archivo JSON
+            fs.writeFileSync("./data/users.json", JSON.stringify(users));
+
+            req.session.user = user;
+
+            return res.redirect("/profile");
+        } else {
+            console.error("El objeto 'user' no está definido.");
+            return res.status(500).send("Error interno del servidor al actualizar el perfil");
         }
-
-        if (req.file) {
-          const imagePath = `/img/users/uploads/${req.file.filename}`;
-          user.profilePic = imagePath;
-        }
-
-        req.session.user = user;
-        return res.redirect("/user/profile");
-      } else {
-        console.error("El objeto 'user' no está definido.");
-        return res
-          .status(500)
-          .send("Error interno del servidor al actualizar el perfil");
-      }
     } catch (error) {
       console.error("Error al actualizar el perfil:", error);
       console.error(error.stack);
@@ -128,7 +135,10 @@ const controller = {
         .status(500)
         .send("Error interno del servidor al actualizar el perfil");
     }
-  },
+},
 };
+
+
+
 
 module.exports = controller;

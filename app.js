@@ -34,13 +34,13 @@ app.use(express.static("public"));
 
 // Configuración de cookie-parser y express-session
 app.use(cookieParser());
-app.use(
-  session({
-    secret: "velvet owo",
-    resave: false,
-    saveUninitialized: true,
-  })
-);
+app.use(session({
+  secret: 'velvet owo',
+  resave: false,
+  saveUninitialized: false,
+  rolling: true,  // Renovar la cookie en cada solicitud
+}));
+
 
 //alta de servidor puerto 3030
 app.listen(3030, () => console.log("El puerto de inicio es: 3030"));
