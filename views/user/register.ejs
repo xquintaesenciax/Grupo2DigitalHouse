@@ -7,6 +7,16 @@
     <div class="login-container">
       <h2>Creá tu cuenta</h2>
 
+      <% if (typeof errors !== 'undefined' && errors.length > 0) { %>
+        <div class="feedback" role="alert">
+          <ul>
+            <% errors.forEach(error => { %>
+              <li><%= error.msg %></li>
+            <% }) %>
+          </ul>
+        </div>
+      <% } %>
+
       <form action="/user/register" method="post" enctype="multipart/form-data">
         <div class="form-group">
           <label for="nombre">Nombre:</label>
@@ -14,12 +24,10 @@
             type="text"
             id="nombre"
             name="nombre"
-            value="<%= locals.old && old.nombre %>"
+            value="<%= (locals.old && locals.old.nombre) ? locals.old.nombre : '' %>"
             required
           />
-          <% if (locals.errors && errors.nombre) {%>
-          <p class="feedback"><%= errors.nombre.msg %></p>
-          <% } %>
+
         </div>
         <div class="form-group">
           <label for="apellido">Apellido:</label>
@@ -27,12 +35,10 @@
             type="text"
             id="apellido"
             name="apellido"
-            value="<%= locals.old && old.apellido %>"
+            value="<%= (locals.old && locals.old.apellido) ? locals.old.apellido : '' %>"
             required
           />
-          <% if (locals.errors && errors.apellido) {%>
-          <p class="feedback"><%= errors.apellido.msg %></p>
-          <% } %>
+
         </div>
         <div class="form-group">
           <label for="email">E-mail:</label>
@@ -40,11 +46,9 @@
             type="email"
             id="email"
             name="email"
-            value="<%= locals.old && old.email %>"
+            value="<%= (locals.old && locals.old.email) ? locals.old.email : '' %>"
           />
-          <% if (locals.errors && errors.email) {%>
-          <p class="feedback"><%= errors.email.msg %></p>
-          <% } %>
+
         </div>
         <div class="form-group">
           <label for="username">Usuario:</label>
@@ -52,12 +56,10 @@
             type="text"
             id="username"
             name="username"
-            value="<%= locals.old && old.username %>"
+            value="<%= (locals.old && locals.old.username) ? locals.old.username : '' %>"
             required
           />
-          <% if (locals.errors && errors.username) {%>
-          <p class="feedback"><%= errors.username.msg %></p>
-          <% } %>
+
         </div>
         <div class="form-group">
           <label for="password">Contraseña:</label>
@@ -65,12 +67,10 @@
             type="password"
             id="password"
             name="password"
-            value="<%= locals.old && old.nombre %>"
+            value="<%= (locals.old && locals.old.password) ? locals.old.password : '' %>"
             required
           />
-          <% if (locals.errors && errors.password) {%>
-          <p class="feedback"><%= errors.password.msg %></p>
-          <% } %>
+
         </div>
         <div>
           <label for="profile-pic">Foto de perfil:</label>
@@ -84,3 +84,5 @@
     <%- include("../partials/footer") %>
   </body>
 </html>
+
+

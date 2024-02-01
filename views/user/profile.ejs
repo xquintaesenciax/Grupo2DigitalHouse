@@ -8,6 +8,8 @@
 
     <h1 class="user-name">Editar perfil</h1>
 
+    
+
     <div class="profile-body">
         <section class="profile-info">
             <div class="profile-container">
@@ -19,30 +21,54 @@
             
     
             <div class="datos">
+                <% if (typeof errors !== 'undefined' && errors.length > 0) { %>
+                    <div class="feedback" role="alert">
+                      <ul>
+                        <% errors.forEach(error => { %>
+                          <li><%= error.msg %></li>
+                        <% }) %>
+                      </ul>
+                    </div>
+                  <% } %>
                 <form action="/user/editar-perfil" method="POST" enctype="multipart/form-data">
                     <div>
                         <label for="nombre">Nombre:</label>
                         <input type="text" id="nombre" name="nombre" value="<%= user.nombre %>" required>
+                        <% if (locals.errors && errors.nombre) {%>
+                            <p class="feedback"><%= errors.nombre.msg %></p>
+                            <% } %>
                     </div>
             
                     <div>
                         <label for="apellido">Apellido:</label>
                         <input type="text" id="apellido" name="apellido" value="<%= user.apellido %>" required>
+                        <% if (locals.errors && errors.apellido) {%>
+                            <p class="feedback"><%= errors.apellido.msg %></p>
+                            <% } %>
                     </div>
             
                     <div>
                         <label for="email">Correo electrónico:</label>
                         <input type="email" id="email" name="email" value="<%= user.email %>" required>
+                        <% if (locals.errors && errors.email) {%>
+                            <p class="feedback"><%= errors.email.msg %></p>
+                            <% } %>
                     </div>
             
                     <div>
                         <label for="username">Nombre de usuario:</label>
                         <input type="text" id="username" name="username" value="<%= user.username %>" required>
+                        <% if (locals.errors && errors.username) {%>
+                            <p class="feedback"><%= errors.username.msg %></p>
+                            <% } %>
                     </div>
             
                     <div>
                         <label for="password">Nueva Contraseña:</label>
                         <input type="password" id="password" name="password" placeholder="Cambiar contraseña">
+                        <% if (locals.errors && errors.password) {%>
+                            <p class="feedback"><%= errors.password.msg %></p>
+                            <% } %>
                     </div>
             
                     <div>

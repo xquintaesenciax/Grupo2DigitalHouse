@@ -160,6 +160,7 @@ header {
 /* Errores formularios */
 .feedback {
   color: red;
+  text-align: left;
 }
 
 /* NO SE COMO LLAMARLE XD */
@@ -206,14 +207,14 @@ header {
 .seccion-articulo {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin: 20px auto;
 }
 
 .seccion-articulo > h2 {
   width: 100%;
   margin: auto 5px;
-  font-size: 3vh;
+  font-size: 2vw;
 }
 
 .section-title {
@@ -256,6 +257,7 @@ header {
 .nombre-articulo,
 .div-button-descripcion > button {
   width: 100%;
+  cursor: pointer;
 }
 
 .nombre-articulo {

@@ -96,6 +96,7 @@ const controller = {
   },
 
   edit: (req, res) => {
+    
     // Obtener información del usuario desde la sesión
     const user = req.session.user;
 
@@ -116,10 +117,25 @@ const controller = {
 
   update: (req, res) => {
     // Resto del código para actualizar un producto...
-    let precioConDescuento =
-      (req.body.precio * (100 - req.body.descuento)) / 100;
 
-    let precioCuotas = precioConDescuento / req.body.cuotas;
+    let descuento = null;
+    let precioConDescuento = null;
+    let cuotas = null;
+    let precioCuotas = null;
+
+    if (req.body.descuento != ""){
+      descuento = req.body.descuento
+      precioConDescuento =
+      (req.body.precio * (100 - descuento)) / 100;
+    };
+
+    if (req.body.cuotas != "" && precioConDescuento){
+      cuotas = req.body.cuotas
+      precioCuotas = precioConDescuento / cuotas
+    }else if (req.body.cuotas != ""){
+      cuotas = req.body.cuotas
+      precioCuotas = req.body.precio /cuotas
+    };
 
     db.producto.findByPk(req.params.id).then((product) => {
       let url;
@@ -134,10 +150,10 @@ const controller = {
           nombre: req.body.nombre.toUpperCase(),
           descripcion: req.body.descripcion,
           color: req.body.color,
-          cuotas: req.body.cuotas,
+          cuotas: cuotas,
           precio: req.body.precio,
           precioConDescuento: precioConDescuento,
-          descuento: req.body.descuento,
+          descuento: descuento,
           precioCuotas: precioCuotas,
           id_categoria: req.body.categoria,
         },

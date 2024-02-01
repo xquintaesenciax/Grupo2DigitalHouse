@@ -23,12 +23,12 @@
 
           <div class="product-form-items">
             <label for="descripcion">Descripción</label>
-            <input
-              type="text"
+            <textarea
               name="descripcion"
               id="descripcion"
-              value="<%= producto.descripcion %>"
-            />
+              cols="40"
+              rows="10"
+            ><%=producto.descripcion%></textarea>
           </div>
 
           <div class="product-form-items">
@@ -39,29 +39,15 @@
           <div class="product-form-items">
             <label for="categoria">Categoría</label>
             <select name="categoria" id="categoria">
-              <!-- <%if(producto.categoria==1){%>
-                selected
-                <%}%> -->
-              <option value="1" <%if(producto.categoria==1){%>
-                selected
-                <%}%>>Traje</option>
-              <option value="2" <%if(producto.categoria==2){%>
-                selected
-                <%}%>>Camisa</option>
-              <option value="3" <%if(producto.categoria==3){%>
-                selected
-                <%}%>>Pantalon</option>
-              <option value="4" <%if(producto.categoria==4){%>
-                selected
-                <%}%>>Chaleco</option>
-              <option value="5" <%if(producto.categoria==5){%>
-                selected
-                <%}%>>Zapato</option>
-              <option value="6" <%if(producto.categoria==6){%>
-                selected
-                <%}%>>Accesorio</option>
+                <option value="">Seleccione una categoría</option>
+                <option value="1" <% if (producto.id_categoria === 1) { %>selected<% } %>>Traje</option>
+                <option value="2" <% if (producto.id_categoria === 2) { %>selected<% } %>>Camisa</option>
+                <option value="3" <% if (producto.id_categoria === 3) { %>selected<% } %>>Pantalon</option>
+                <option value="4" <% if (producto.id_categoria === 4) { %>selected<% } %>>Chaleco</option>
+                <option value="5" <% if (producto.id_categoria === 5) { %>selected<% } %>>Zapato</option>
+                <option value="6" <% if (producto.id_categoria === 6) { %>selected<% } %>>Accesorio</option>
             </select>
-          </div>
+        </div>
 
           <div class="product-form-items">
             <label for="color">Color</label>
