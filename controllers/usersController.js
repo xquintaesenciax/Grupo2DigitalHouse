@@ -157,7 +157,10 @@ const controller = {
       console.error(error.stack);
       return res.status(500).send("Error interno del servidor al actualizar el perfil");
     }
-  },
+},
 };
+
+
+
 
 module.exports = controller;
