@@ -8,26 +8,38 @@
       <%- include("../partials/header") %>
       <div class="product-container">
         <section class="images">
-          <div class="thumbnails">
-            <img class="thumbnail" src="/img/productos/miniatura1.png" />
-            <img class="thumbnail" src="/img/productos/miniatura2.png" />
-            <img class="thumbnail" src="/img/productos/miniatura3.png" />
-            <img class="thumbnail" src="/img/productos/miniatura4.png" />
-            <img class="thumbnail" src="/img/productos/miniatura5.png" />
-          </div>
-
+          <!--IMAGEN PRINCIPAL SIN BASE DE DATOS
           <div class="main-image">
             <img id="main-image" src="<%=producto.images%>" />
+          </div> -->
+
+          <!-- IMAGEN PRINCIPAL CON BASE DE DATOS -->
+          <div class="main-image">
+            <img
+              id="main-image"
+              src="<%= producto.images %>"
+              alt="imagen-producto"
+            />
           </div>
         </section>
 
         <section class="description">
           <h1 class="title"><%=producto.nombre%></h1>
-          <h3 class="price">$<%=producto.precioConDescuento%></h3>
+
+          <% if (producto.descuento) { %>
+            <p class="total-price">$<%= producto.precio %></p>
+            <p class="price">$<%= producto.precioConDescuento %></p>
+            <p class="discount"><%= producto.descuento %>% off</p>
+          <% } else{ %>
+            <p class="price">$<%= producto.precio %></p>
+          <%} %>
+          
+
+          <%if (producto.cuotas){%>
           <p class="dues">
             <%=producto.cuotas%> cuotas sin interés de
             $<%=producto.precioCuotas%>
-          </p>
+          </p> <%}%>
           <p><%=producto.descripcion%></p>
           <p class="color">
             Color:

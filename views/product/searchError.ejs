@@ -5,9 +5,10 @@
   <body>
     <%- include("../partials/header") %>
 
+    <h1 class="section-title">SIN RESULTADO DE LA BUSQUEDA '<%=busqueda%>'</h1>
     <main class="main-home">
       <section class="seccion-articulo">
-        <h2 class="section-title">TODOS LOS PRODUCTOS</h2>
+        <h2 class="section-title">PRODUCTOS RECOMENDADOS</h2>
 
         <% for(let i = 0; i < productos.length; i++) { %>
         <article class="item-articulo">
@@ -22,7 +23,7 @@
           <div class="item-img">
             <a href="/productos/<%= productos[i].id %>">
               <img
-                src="<%= productos[i].images %>"
+                src="/img/product/<%= productos[i].images %>"
                 alt="imagen-producto"
               />
             </a>
@@ -33,11 +34,9 @@
               <p class="nombre-articulo"><%= productos[i].nombre %></p>
             </a>
             <p class="descripcion-articulo"><%= productos[i].color %></p>
-            <% if (productos[i].cuotas){%>
-              <p class="cuotas-articulo"><%= productos[i].cuotas %> cuotas sin interes</p>
-          <%} else{%>
-              <p class="cuotas-articulo" style="color: white;"> adasdasd</p>
-          <%}%>
+            <p class="cuotas-articulo">
+              <%= productos[i].cuotas %> cuotas sin interes
+            </p>
             <div class="precio-descuento-articulo">
               <% if(productos[i].descuento === null) { %>
               <p class="precio-articulo">$<%= productos[i].precio %></p>

@@ -6,7 +6,11 @@ const bcrypt = require("bcryptjs");
 
 const controller = {
   login: (req, res) => {
-    res.render("./user/login");
+    if (!req.session.user) {
+      res.render("./user/login");
+    } else {
+      res.redirect("/");
+    }
   },
   log: (req, res) => {
     const user = users.find((user) => user.email === req.body.email);
@@ -30,9 +34,11 @@ const controller = {
     res.render("./user/register");
   },
   regist: (req, res) => {
-    const imagePath = req.file ? `/img/users/uploads/${req.file.filename}` : "/img/users/perfil-pordefecto.png";
+    const imagePath = req.file
+      ? `/img/users/uploads/${req.file.filename}`
+      : "/img/users/perfil-pordefecto.png";
     let errors = validationResult(req);
-  
+
     if (errors.isEmpty()) {
       let newUser = {
         nombre: req.body.nombre,
@@ -43,16 +49,16 @@ const controller = {
         profilePic: imagePath,
         admin: false,
       };
-  
+
       // Agregar el nuevo usuario al array de usuarios
       users.push(newUser);
-  
+
       // Guardar el array actualizado en el archivo JSON
       let newUsersJson = JSON.stringify(users);
       fs.writeFileSync("./data/users.json", newUsersJson);
-  
+
       req.session.user = newUser;
-  
+
       // Pasar el email como variable al renderizar la vista
       res.render("./user/login", { email: req.body.email });
     } else {
@@ -66,7 +72,7 @@ const controller = {
       res.render("./user/profile", { user });
     } else {
       // Redirige a la página de inicio de sesión si el usuario no está autenticado
-      res.redirect("/login");
+      res.redirect("/user/login");
     }
   },
   logout: (req, res) => {
@@ -83,7 +89,8 @@ const controller = {
   },
   edit: (req, res) => {
     try {
-        const user = req.session.user;
+      const user = req.session.user;
+      console.log(user);
 
         // Verificar si el usuario está definido
         if (user) {
@@ -121,10 +128,12 @@ const controller = {
             return res.status(500).send("Error interno del servidor al actualizar el perfil");
         }
     } catch (error) {
-        console.error("Error al actualizar el perfil:", error);
-        console.error(error.stack);
+      console.error("Error al actualizar el perfil:", error);
+      console.error(error.stack);
 
-        return res.status(500).send("Error interno del servidor al actualizar el perfil");
+      return res
+        .status(500)
+        .send("Error interno del servidor al actualizar el perfil");
     }
 },
 };
@@ -133,4 +142,3 @@ const controller = {
 
 
 module.exports = controller;
-

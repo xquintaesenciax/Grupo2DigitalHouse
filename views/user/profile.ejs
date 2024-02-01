@@ -14,12 +14,12 @@
                 <div class="profile-pic">
                     <img src="<%= user.profilePic %>" alt="Imagen de Perfil">
                 </div>
-                <a class="log-out" href="/log-out"><p><i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión</p></a>
+                <a class="log-out" href="/user/log-out"><p><i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión</p></a>
             </div>
             
     
             <div class="datos">
-                <form action="/editar-perfil" method="POST" enctype="multipart/form-data">
+                <form action="/user/editar-perfil" method="POST" enctype="multipart/form-data">
                     <div>
                         <label for="nombre">Nombre:</label>
                         <input type="text" id="nombre" name="nombre" value="<%= user.nombre %>" required>
