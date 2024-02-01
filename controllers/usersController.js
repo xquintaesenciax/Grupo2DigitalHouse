@@ -20,7 +20,6 @@ const controller = {
       const user = await db.user.findOne({ where: { email: email } });
 
       if (user) {
-        console.log(user.email);
         const check = await bcrypt.compare(password, user.password);
         if (check) {
           req.session.user = user;
