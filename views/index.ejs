@@ -9,47 +9,58 @@
 
 
     <div class="img-inicio">
-      <img src="/img/product/camisa-hombre-1.jpg" alt="imagen-inicio" />
+      <img src="/img/banner.jpg" alt="imagen-inicio" />
     </div>
   
     <div class="eslogan">
       <p class="texto-inicio">
         <strong>"La elegancia es la única belleza que nunca se desvanece"</strong>
       </p>
-      <p class="autor-texto-inicio">- Audrey Hepburn</p>
+      <br><p class="autor-texto-inicio">- Audrey Hepburn</p>
     </div>
     <main class="main-home">
         <a class="section-title" href="/productos/descuentos"><h2>DESCUENTOS</h2></a>
       <section class="seccion-articulo">
 
-        <% for(let i = 0; i < 4; i++) { %>
-          <article class="item-articulo">
-              <div class="item-img">
-                  <a href="/productos/<%= productos[i].id %>">
-                      <img src="<%= productos[i].images %>" alt="imagen-producto" />
-                  </a>
-              </div>
-              <div class="item-descripcion">
-                  <a href="/productos/<%= productos[i].id %>">
-                      <p class="nombre-articulo"><%= productos[i].nombre %></p>
-                  </a>
-                  <p class="descripcion-articulo"><%= productos[i].color %></p>
-                  <p class="cuotas-articulo"><%= productos[i].cuotas %> cuotas sin interes</p>
-                  <div class="precio-descuento-articulo">
-                      <% if(productos[i].descuento === null) { %>
-                          <p class="precio-articulo">$<%= productos[i].precio %></p>
-                      <% } else { %>
-                          <p class="precio-sin-descuento">$<%= productos[i].precio %></p>
-                          <p class="precio-articulo">$<%= productos[i].precioConDescuento %></p>
-                          <p class="descuento-articulo"><%= productos[i].descuento %>% off</p>
-                      <% } %>
-                  </div>
-                  <div class="div-button-descripcion">
-                      <button>Agregar al carrito</button>
-                  </div>
-              </div>
-          </article>
-      <% } %>  
+        <%
+let productosConDescuento = 0;
+%>
+
+<% for(let i = 0; i < productos.length && productosConDescuento < 4; i++) {
+    if(productos[i].descuento !== null) {
+        productosConDescuento++;
+%>
+            
+<article class="item-articulo">
+    <div class="item-img">
+        <a href="/productos/<%= productos[i].id %>">
+            <img src="<%= productos[i].images %>" alt="imagen-producto" />
+        </a>
+    </div>
+    <div class="item-descripcion">
+        <a href="/productos/<%= productos[i].id %>">
+            <p class="nombre-articulo"><%= productos[i].nombre %></p>
+        </a>
+        <p class="descripcion-articulo"><%= productos[i].color %></p>
+        <% if (productos[i].cuotas){%>
+        <p class="cuotas-articulo"><%= productos[i].cuotas %> cuotas sin interes</p>
+        <%} else{%>
+        <p class="cuotas-articulo" style="color: white;"> adasdasd</p>
+        <%}%>
+        
+        <div class="precio-descuento-articulo">
+            <p class="precio-sin-descuento">$<%= productos[i].precio %></p>
+            <p class="precio-articulo">$<%= productos[i].precioConDescuento %></p>
+            <p class="descuento-articulo"><%= productos[i].descuento %>% off</p>
+        </div>
+        <div class="div-button-descripcion">
+            <button>Agregar al carrito</button>
+        </div>
+    </div>
+</article>
+
+<% }  %>
+<% }  %>
 
       </section>
 

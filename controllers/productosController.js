@@ -45,19 +45,34 @@ const controller = {
 
     // Resto del código para crear un nuevo producto...
     // console.log(req.file.filename);
-    let precioConDescuento =
-      (req.body.precio * (100 - req.body.descuento)) / 100;
+    let descuento = null;
+    let precioConDescuento = null;
+    let cuotas = null;
+    let precioCuotas = null;
 
-    let precioCuotas = precioConDescuento / req.body.cuotas;
+    if (req.body.descuento != ""){
+      descuento = req.body.descuento
+      precioConDescuento =
+      (req.body.precio * (100 - descuento)) / 100;
+    };
+
+    if (req.body.cuotas != "" && precioConDescuento){
+      cuotas = req.body.cuotas
+      precioCuotas = precioConDescuento / cuotas
+    }else if (req.body.cuotas != ""){
+      cuotas = req.body.cuotas
+      precioCuotas = req.body.precio /cuotas
+    };
+    
     db.producto.create({
-      images: req.file.filename,
-      nombre: req.body.nombre.toLowerCase(),
+      images: "/img/product/" + req.file.filename,
+      nombre: req.body.nombre.toUpperCase(),
       descripcion: req.body.descripcion,
       color: req.body.color,
-      cuotas: req.body.cuotas,
+      cuotas: cuotas,
       precio: req.body.precio,
       precioConDescuento: precioConDescuento,
-      descuento: req.body.descuento,
+      descuento: descuento,
       precioCuotas: precioCuotas,
       id_categoria: req.body.categoria,
     });
@@ -109,14 +124,14 @@ const controller = {
     db.producto.findByPk(req.params.id).then((product) => {
       let url;
       if (req.file) {
-        url = req.file.filename;
+        url = "/img/product/" + req.file.filename;
       } else {
         url = product.images;
       }
       db.producto.update(
         {
           images: url,
-          nombre: req.body.nombre.toLowerCase(),
+          nombre: req.body.nombre.toUpperCase(),
           descripcion: req.body.descripcion,
           color: req.body.color,
           cuotas: req.body.cuotas,

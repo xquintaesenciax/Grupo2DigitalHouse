@@ -10,7 +10,6 @@
 
 body {
   font-family: "Noto Sans", sans-serif;
-  background-color: rgb(238, 235, 235);
   margin: 0;
 }
 
@@ -170,13 +169,13 @@ header {
 }
 
 .img-inicio > img {
-  margin: 2vh 0;
-  height: 40vh;
-  width: 50%;
+  margin: 0;
+  width: 100%;
 }
 
 .eslogan {
-  background-color: #dedddd;
+  width: 70%;
+  margin: 2vw auto;
 }
 
 .texto-inicio,
@@ -187,16 +186,15 @@ header {
 }
 
 .texto-inicio {
-  height: 15vh;
-  font-size: 3vh;
+  font-size: 5vw;
   text-align: center;
-  padding: 2vh 4vw;
+  padding: 3vw;
 }
 
 .autor-texto-inicio {
-  font-size: 3vh;
+  font-size: 4vw;
   text-align: right;
-  padding: 1vh 2vw;
+  padding: 3vw;
 }
 
 /* CSS MAIN */
@@ -251,7 +249,7 @@ header {
 }
 
 .item-descripcion > p {
-  font-size: 1.8vh;
+  font-size: 1vw;
   margin: 0;
 }
 
@@ -551,14 +549,10 @@ footer > p {
 
   /* NO SE COMO LLAMARLE XD */
   .img-inicio > img {
-    height: 50vh;
-    width: 50%;
-    margin: 2vh 0;
+    width: 100%;
+    margin: 0;
   }
 
-  .texto-inicio {
-    font-size: 5vh;
-  }
 
   /* CSS MAIN */
   .precio-descuento-articulo .precio-sin-descuento,
@@ -600,23 +594,23 @@ footer > p {
 @media (min-width: 1024px) {
   /* NO SE COMO LLAMARLE XD */
   .img-inicio > img {
-    height: 65vh;
-    width: 40%;
+    width: 100%;
+    margin: 0;
   }
 
   .bienvenida {
     display: block;
   }
 
-  .eslogan {
-    width: 70%;
-    margin: 5vh auto;
-    border-radius: 10px;
+
+  .eslogan .texto-inicio{
+    font-size: 4vw;
+  }
+  .eslogan .autor-texto-inicio{
+    font-size: 2.5vw;
+    padding: 2vw;
   }
 
-  .texto-inicio {
-    font-size: 6vh;
-  }
 
   /* CSS MAIN */
   .item-img > img {
@@ -624,7 +618,6 @@ footer > p {
   }
 
   .div-button-descripcion > button {
-    height: 5vh;
     width: 60%;
   }
 
@@ -688,10 +681,7 @@ footer > p {
     width: 100%;
   }
 
-  /* NO SE COMO LLAMARLE XD */
-  .texto-inicio {
-    font-size: 7vh;
-  }
+
 }
 
 @media (min-width: 1220px) {
