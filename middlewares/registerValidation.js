@@ -5,8 +5,8 @@ const {check} = require("express-validator")
 const db = require("../database/models");
 
 let validateRegister = [
-    check("nombre").notEmpty().withMessage("Debes ingresar tu nombre."),
-    check("apellido").notEmpty().withMessage("Debes ingrear tu apellido."),
+    check("nombre").notEmpty().withMessage("Debes ingresar tu nombre.").isLength({ min: 2 }).withMessage("El nombre debe tener al menos 2 caracteres."),
+    check("apellido").notEmpty().withMessage("Debes ingrear tu apellido.").isLength({ min: 2 }).withMessage("El apellido debe tener al menos 2 caracteres."),
     check("email")
         .isEmail().withMessage("Debes ingresar un email válido.")
         .custom(async (value) => {
@@ -27,7 +27,19 @@ let validateRegister = [
         }),
     check("password")
         .notEmpty().withMessage("Debes ingresar una contraseña.")
-        .isLength({ min: 8 }).withMessage("La contraseña debe tener al menos 8 caracteres.")
+        .isLength({ min: 8 }).withMessage("La contraseña debe tener al menos 8 caracteres."),
+    check("image").custom((value, { req }) => {
+        // Verificar si hay una imagen subida
+         if (req.file) {
+            // Verificar el formato de la imagen (jpeg, jpg, png)
+            const allowedFormats = /jpeg|jpg|png|gif/;
+            if (!allowedFormats.test(req.file.mimetype)) {
+                throw new Error("El formato de la imagen no es válido. Solo se permiten archivos jpeg, jpg, png o gif.");
+            }
+        }
+        // Si no se sube una imagen, no hay ningún error
+        return true;
+    })
 ];
 
 

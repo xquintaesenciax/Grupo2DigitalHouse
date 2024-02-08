@@ -6,14 +6,26 @@
 
     <main>
       <div class="product-form">
+
         <form
           method="POST"
           action="/productos/created"
           enctype="multipart/form-data"
         >
+
+        <% if (typeof errors !== 'undefined' && errors.length > 0) { %>
+          <div class="feedback" role="alert">
+            <ul>
+              <% errors.forEach(error => { %>
+                <li><%= error.msg %></li>
+              <% }) %>
+            </ul>
+          </div>
+        <% } %>
+        
           <div class="product-form-items">
             <label for="nombre">Nombre del producto</label>
-            <input type="text" name="nombre" id="nombre" />
+            <input type="text" name="nombre" id="nombre" value="<%= (locals.old && locals.old.nombre) ? locals.old.nombre : '' %>" />
           </div>
 
           <div class="product-form-items">
@@ -23,6 +35,7 @@
               id="descripcion"
               cols="40"
               rows="10"
+              value="<%= (locals.old && locals.old.descripcion) ? locals.old.descripcion : '' %>"
             ></textarea>
           </div>
 
@@ -46,17 +59,17 @@
 
           <div class="product-form-items">
             <label for="color">Color</label>
-            <input type="text" name="color" id="color" />
+            <input type="text" name="color" id="color" value="<%= (locals.old && locals.old.color) ? locals.old.color : '' %>"/>
           </div>
 
           <div class="product-form-items">
             <label for="precio">Precio</label>
-            <input type="text" name="precio" id="precio" />
+            <input type="text" name="precio" id="precio" value="<%= (locals.old && locals.old.precio) ? locals.old.precio : '' %>"/>
           </div>
 
           <div class="product-form-items">
             <label for="descuento">Descuento (%)</label>
-            <input type="text" name="descuento" id="descuento" />
+            <input type="text" name="descuento" id="descuento" value="<%= (locals.old && locals.old.descuento) ? locals.old.descuento : '' %>" />
           </div>
 
           <div class="product-form-items">

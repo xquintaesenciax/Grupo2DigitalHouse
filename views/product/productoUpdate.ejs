@@ -11,6 +11,17 @@
           action="/productos/<%= producto.id %>?_method=PUT"
           enctype="multipart/form-data"
         >
+
+        <% if (typeof errors !== 'undefined' && errors.length > 0) { %>
+          <div class="feedback" role="alert">
+            <ul>
+              <% errors.forEach(error => { %>
+                <li><%= error.msg %></li>
+              <% }) %>
+            </ul>
+          </div>
+        <% } %>
+        
           <div class="product-form-items">
             <label for="nombre">Nombre del producto</label>
             <input

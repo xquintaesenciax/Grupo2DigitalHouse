@@ -41,7 +41,6 @@ const controller = {
     try {
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
-        console.log(errors);
         // Si hay errores de validación, renderizamos la vista de registro con los errores
         return res.render("./user/register", { errors: errors.array(), old: req.body });
       }
@@ -80,7 +79,6 @@ const controller = {
     // Verifica si el usuario está autenticado
     if (req.session.user) {
       const user = req.session.user;
-      console.log(user.email)
       res.render("./user/profile", { user });
     } else {
       // Redirige a la página de inicio de sesión si el usuario no está autenticado

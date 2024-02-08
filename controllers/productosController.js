@@ -1,6 +1,7 @@
 // const fs = require("fs");
 // const data = fs.readFileSync("./data/productos.json");
 // const productos = JSON.parse(data);
+const { validationResult } = require("express-validator");
 const db = require("../database/models");
 const Op = db.Sequelize.Op;
 
@@ -39,61 +40,68 @@ const controller = {
     }
   },
 
-  created: (req, res) => {
-    // Obtener información del usuario desde la sesión
+  created: async (req, res) => {
     const user = req.session.user;
-
-    // Resto del código para crear un nuevo producto...
-    // console.log(req.file.filename);
-    let descuento = null;
-    let precioConDescuento = null;
-    let cuotas = null;
-    let precioCuotas = null;
-
-    if (req.body.descuento != ""){
-      descuento = req.body.descuento
-      precioConDescuento =
-      (req.body.precio * (100 - descuento)) / 100;
-    };
-
-    if (req.body.cuotas != "" && precioConDescuento){
-      cuotas = req.body.cuotas
-      precioCuotas = precioConDescuento / cuotas
-    }else if (req.body.cuotas != ""){
-      cuotas = req.body.cuotas
-      precioCuotas = req.body.precio /cuotas
-    };
-    
-    db.producto.create({
-      images: "/img/product/" + req.file.filename,
-      nombre: req.body.nombre.toUpperCase(),
-      descripcion: req.body.descripcion,
-      color: req.body.color,
-      cuotas: cuotas,
-      precio: req.body.precio,
-      precioConDescuento: precioConDescuento,
-      descuento: descuento,
-      precioCuotas: precioCuotas,
-      id_categoria: req.body.categoria,
-    });
-
-    // CONSIDERO QUE ESTA ES UNA MEJOR MANERA DE REDIRIGIR
-    // YA QUE LE PODEMOS INDICAR AL USUARIO QUE SU ACCION
-    // SE REALIZO CORRECTAMENTE Y A SU VEZ, DAR TIEMPO A QUE
-    // LA BASE DE DATOS SE ACTUALICE CORRECTAMENTE PARA
-    // HACER USO DE SUS NUEVOS DATOS(SE PUEDE HACER UNA
-    // VISTA QUE MANEJE ESTE TIEMPO DE ESPERA :) )
-
-    res.send(`
-  <p>Producto agregado exitosamente. Serás redirigido en 5 segundos...</p>
-  <script>
-    setTimeout(function() {
-      window.location.href = '/productos';
-    }, 5000); // 5000 milisegundos = 5 segundos
-  </script>
-`);
-    // res.redirect("/productos");
+    try {
+      const errors = validationResult(req);
+      if (!errors.isEmpty()) {
+        // Si hay errores de validación, renderizamos la vista de registro con los errores
+        return res.render("./product/productoCreate", { errors: errors.array(), old: req.body, user: user });
+      }
+  
+      // Resto del código para crear un nuevo producto...
+      let descuento = null;
+      let precioConDescuento = null;
+      let cuotas = null;
+      let precioCuotas = null;
+  
+      if (req.body.descuento) {
+        descuento = parseFloat(req.body.descuento); // Convertir a número
+        precioConDescuento = (req.body.precio * (100 - descuento)) / 100;
+      }
+  
+      if (req.body.cuotas) {
+        cuotas = parseInt(req.body.cuotas); // Convertir a número entero
+        if (precioConDescuento) {
+          precioCuotas = precioConDescuento / cuotas;
+        } else {
+          precioCuotas = req.body.precio / cuotas;
+        }
+      }
+  
+      const producto = await db.producto.create({
+        images: "/img/product/" + req.file.filename,
+        nombre: req.body.nombre.toUpperCase(),
+        descripcion: req.body.descripcion,
+        color: req.body.color,
+        cuotas: cuotas,
+        precio: req.body.precio,
+        precioConDescuento: precioConDescuento,
+        descuento: descuento,
+        precioCuotas: precioCuotas,
+        id_categoria: req.body.categoria,
+      });
+  
+      if (producto) {
+        // Producto creado exitosamente
+        res.send(`
+          <p>Producto agregado exitosamente. Serás redirigido en 5 segundos...</p>
+          <script>
+            setTimeout(function() {
+              window.location.href = '/productos';
+            }, 5000); // 5000 milisegundos = 5 segundos
+          </script>
+        `);
+      } else {
+        // Error al crear el producto
+        res.status(500).send("Error al agregar el producto.");
+      }
+    } catch (error) {
+      console.error(error);
+      res.status(500).send("Error interno del servidor.");
+    }
   },
+  
 
   edit: (req, res) => {
     
@@ -115,36 +123,45 @@ const controller = {
     }
   },
 
-  update: (req, res) => {
-    // Resto del código para actualizar un producto...
-
-    let descuento = null;
-    let precioConDescuento = null;
-    let cuotas = null;
-    let precioCuotas = null;
-
-    if (req.body.descuento != ""){
-      descuento = req.body.descuento
-      precioConDescuento =
-      (req.body.precio * (100 - descuento)) / 100;
-    };
-
-    if (req.body.cuotas != "" && precioConDescuento){
-      cuotas = req.body.cuotas
-      precioCuotas = precioConDescuento / cuotas
-    }else if (req.body.cuotas != ""){
-      cuotas = req.body.cuotas
-      precioCuotas = req.body.precio /cuotas
-    };
-
-    db.producto.findByPk(req.params.id).then((product) => {
-      let url;
+  update: async (req, res) => {
+    const user = req.session.user;
+    try {
+      const errors = validationResult(req);
+      if (!errors.isEmpty()) {
+        // Si hay errores de validación, recuperar los datos del producto y renderizar la vista de actualización con los errores y los datos
+        const product = await db.producto.findByPk(req.params.id);
+        return res.render("./product/productoUpdate", { errors: errors.array(), producto: product, old: req.body, user: user });
+      }
+      
+      
+      // Resto del código para actualizar un producto...
+      let descuento = null;
+      let precioConDescuento = null;
+      let cuotas = null;
+      let precioCuotas = null;
+  
+      if (req.body.descuento) {
+        descuento = parseFloat(req.body.descuento); // Convertir a número
+        precioConDescuento = (req.body.precio * (100 - descuento)) / 100;
+      }
+  
+      if (req.body.cuotas) {
+        cuotas = parseInt(req.body.cuotas); // Convertir a número entero
+        if (precioConDescuento) {
+          precioCuotas = precioConDescuento / cuotas;
+        } else {
+          precioCuotas = req.body.precio / cuotas;
+        }
+      }
+  
+      const product = await db.producto.findByPk(req.params.id);
+      let url = product.images;
+  
       if (req.file) {
         url = "/img/product/" + req.file.filename;
-      } else {
-        url = product.images;
       }
-      db.producto.update(
+  
+      await db.producto.update(
         {
           images: url,
           nombre: req.body.nombre.toUpperCase(),
@@ -163,10 +180,14 @@ const controller = {
           },
         }
       );
-
+  
       res.redirect("/productos");
-    });
-  },
+    } catch (error) {
+      console.error(error);
+      res.status(500).send("Error interno del servidor.");
+    }
+  }
+,  
 
   delete: (req, res) => {
     // Obtener información del usuario desde la sesión
