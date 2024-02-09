@@ -52,3 +52,22 @@ Dejar las tareas para el último momento
 
 5- Dejar de hacer
 Desaparecerse 
+
+---------------------------------------------
+
+Retro 8/2/2024
+
+1 - Comenzar a hacer
+Volver a organizar el tablero de trabajo
+
+2- Hacer más
+Ordenar mejor los tiempos
+
+3- Continuar haciendo
+Comunicacion por distintos canales
+
+4- Hacer menos
+Dejar las tareas para el último momento
+
+5- Dejar de hacer
+
