@@ -46,20 +46,24 @@ const controller = {
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
         // Si hay errores de validación, renderizamos la vista de registro con los errores
-        return res.render("./product/productoCreate", { errors: errors.array(), old: req.body, user: user });
+        return res.render("./product/productoCreate", {
+          errors: errors.array(),
+          old: req.body,
+          user: user,
+        });
       }
-  
+
       // Resto del código para crear un nuevo producto...
       let descuento = null;
       let precioConDescuento = null;
       let cuotas = null;
       let precioCuotas = null;
-  
+
       if (req.body.descuento) {
         descuento = parseFloat(req.body.descuento); // Convertir a número
         precioConDescuento = (req.body.precio * (100 - descuento)) / 100;
       }
-  
+
       if (req.body.cuotas) {
         cuotas = parseInt(req.body.cuotas); // Convertir a número entero
         if (precioConDescuento) {
@@ -68,7 +72,7 @@ const controller = {
           precioCuotas = req.body.precio / cuotas;
         }
       }
-  
+
       const producto = await db.producto.create({
         images: "/img/product/" + req.file.filename,
         nombre: req.body.nombre.toUpperCase(),
@@ -81,7 +85,7 @@ const controller = {
         precioCuotas: precioCuotas,
         id_categoria: req.body.categoria,
       });
-  
+
       if (producto) {
         // Producto creado exitosamente
         res.send(`
@@ -101,10 +105,8 @@ const controller = {
       res.status(500).send("Error interno del servidor.");
     }
   },
-  
 
   edit: (req, res) => {
-    
     // Obtener información del usuario desde la sesión
     const user = req.session.user;
 
@@ -130,21 +132,25 @@ const controller = {
       if (!errors.isEmpty()) {
         // Si hay errores de validación, recuperar los datos del producto y renderizar la vista de actualización con los errores y los datos
         const product = await db.producto.findByPk(req.params.id);
-        return res.render("./product/productoUpdate", { errors: errors.array(), producto: product, old: req.body, user: user });
+        return res.render("./product/productoUpdate", {
+          errors: errors.array(),
+          producto: product,
+          old: req.body,
+          user: user,
+        });
       }
-      
-      
+
       // Resto del código para actualizar un producto...
       let descuento = null;
       let precioConDescuento = null;
       let cuotas = null;
       let precioCuotas = null;
-  
+
       if (req.body.descuento) {
         descuento = parseFloat(req.body.descuento); // Convertir a número
         precioConDescuento = (req.body.precio * (100 - descuento)) / 100;
       }
-  
+
       if (req.body.cuotas) {
         cuotas = parseInt(req.body.cuotas); // Convertir a número entero
         if (precioConDescuento) {
@@ -153,14 +159,14 @@ const controller = {
           precioCuotas = req.body.precio / cuotas;
         }
       }
-  
+
       const product = await db.producto.findByPk(req.params.id);
       let url = product.images;
-  
+
       if (req.file) {
         url = "/img/product/" + req.file.filename;
       }
-  
+
       await db.producto.update(
         {
           images: url,
@@ -180,15 +186,13 @@ const controller = {
           },
         }
       );
-  
+
       res.redirect("/productos");
     } catch (error) {
       console.error(error);
       res.status(500).send("Error interno del servidor.");
     }
-  }
-,  
-
+  },
   delete: (req, res) => {
     // Obtener información del usuario desde la sesión
     const user = req.session.user;

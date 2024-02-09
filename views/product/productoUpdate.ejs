@@ -10,6 +10,7 @@
           method="POST"
           action="/productos/<%= producto.id %>?_method=PUT"
           enctype="multipart/form-data"
+          class="form-update-product"
         >
 
         <% if (typeof errors !== 'undefined' && errors.length > 0) { %>
@@ -30,6 +31,12 @@
               id="nombre"
               value="<%= producto.nombre %>"
             />
+            <p
+            class="feedback nombre"
+            style="display: none; margin: 0px; padding: 0px; font-size: 12px"
+          >
+            Ingrese un nombre con más de 5 caracteres.
+          </p>
           </div>
 
           <div class="product-form-items">
@@ -40,11 +47,23 @@
               cols="40"
               rows="10"
             ><%=producto.descripcion%></textarea>
+            <p
+            class="feedback descripcion"
+            style="display: none; margin: 0px; padding: 0px; font-size: 12px"
+          >
+            Ingrese una descripcion.
+          </p>
           </div>
 
           <div class="product-form-items">
             <label for="imagenes">Imágenes</label>
             <input type="file" name="imagen" id="imagenes" />
+            <p
+            class="feedback img"
+            style="display: none; margin: 0px; padding: 0px; font-size: 12px"
+          >
+            Ingrese una imagen con extenciones .JPG, . JPEG, .PNG o .GIF.
+          </p>
           </div>
 
           <div class="product-form-items">
@@ -78,6 +97,12 @@
               id="precio"
               value="<%= producto.precio %>"
             />
+            <p
+            class="feedback precio"
+            style="display: none; margin: 0px; padding: 0px; font-size: 12px"
+          >
+            Ingrese un precio.
+          </p>
           </div>
 
           <div class="product-form-items">
@@ -88,6 +113,12 @@
               id="descuento"
               value="<%=producto.descuento%>"
             />
+            <p
+            class="feedback descuento"
+            style="display: none; margin: 0px; padding: 0px; font-size: 12px"
+          >
+            Ingrese un descuento.
+          </p>
           </div>
 
           <div class="product-form-items">
@@ -111,5 +142,6 @@
     </main>
 
     <%-include("../partials/footer")%>
+    <script src="/js/validationUpdateProduct.js" defer></script>
   </body>
 </html>
