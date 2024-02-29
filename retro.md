@@ -71,3 +71,22 @@ Dejar las tareas para el último momento
 
 5- Dejar de hacer
 
+----------------------------------------------
+
+Retro 29/2/2024
+
+
+1 - Comenzar a hacer
+Organizar mejor el tablero de trabajo
+
+2- Hacer más
+Dedicar más tiempo
+
+3- Continuar haciendo
+Comunicacion por distintos canales
+
+4- Hacer menos
+Dejar las tareas para el último momento
+
+5- Dejar de hacer
+
