@@ -1,7 +1,7 @@
 <h1 style="text-align: center;" >Velvet - Tienda de Trajes Elegantes</h1>
 
 
-Velvet es una tienda en línea que ofrece una amplia gama de trajes elegantes para hombres y mujeres. Nuestra misión es proporcionar prendas de alta calidad que realcen la elegancia y el estilo de nuestros clientes en ocasiones especiales, 
+Velvet es una tienda en línea que ofrece una amplia gama de trajes elegantes para hombres. Nuestra misión es proporcionar prendas de alta calidad que realcen la elegancia y el estilo de nuestros clientes en ocasiones especiales, 
 eventos formales y en su vida cotidiana.
 
 
