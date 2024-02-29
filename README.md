@@ -55,10 +55,6 @@ Si tienes preguntas, sugerencias o necesitas asistencia, no dudes en ponerte en 
 
 Martin Luciano Nahuel Ocampo
 
-Cesar Alejandro Ramos
-
-Emmanuel Iván Parra
-
 Nuria Abellan
 
 ## Diseño
