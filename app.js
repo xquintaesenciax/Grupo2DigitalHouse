@@ -11,6 +11,7 @@ const indexRouter = require("./routes/indexRouter");
 const productosRouter = require("./routes/productosRouter");
 const usersRouter = require("./routes/usersRouter");
 const carritoRouter = require("./routes/carritoRouter");
+const apisRouter = require("./routes/apisRouter");
 
 //creacion de servidor
 const app = express();
@@ -34,13 +35,14 @@ app.use(express.static("public"));
 
 // Configuración de cookie-parser y express-session
 app.use(cookieParser());
-app.use(session({
-  secret: 'velvet owo',
-  resave: false,
-  saveUninitialized: false,
-  rolling: true,  // Renovar la cookie en cada solicitud
-}));
-
+app.use(
+  session({
+    secret: "velvet owo",
+    resave: false,
+    saveUninitialized: false,
+    rolling: true, // Renovar la cookie en cada solicitud
+  })
+);
 
 //alta de servidor puerto 3030
 app.listen(3030, () => console.log("El puerto de inicio es: 3030"));
@@ -81,3 +83,7 @@ app.use("/productos", productosRouter);
 // app.get("/productos/:id", productosRouter);
 //<----------->
 //registro
+
+//APIS
+
+app.use("/api", apisRouter);
