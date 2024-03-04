@@ -11,6 +11,7 @@ const indexRouter = require("./routes/indexRouter");
 const productosRouter = require("./routes/productosRouter");
 const usersRouter = require("./routes/usersRouter");
 const carritoRouter = require("./routes/carritoRouter");
+const apisRouter = require("./routes/apisRouter");
 
 //creacion de servidor
 const app = express();
@@ -81,3 +82,8 @@ app.use("/productos", productosRouter);
 // app.get("/productos/:id", productosRouter);
 //<----------->
 //registro
+
+//APIS
+
+app.get("/api/users", apisRouter);
+app.get("/api/users/:id", apisRouter)
