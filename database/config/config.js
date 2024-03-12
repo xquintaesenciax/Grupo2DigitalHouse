@@ -1,7 +1,7 @@
 module.exports = {
   development: {
     username: "root",
-    password: "Pandax123",
+    password: null,
     database: "velvet_2",
     host: "127.0.0.1",
     dialect: "mysql",

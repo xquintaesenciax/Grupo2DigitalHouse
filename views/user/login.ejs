@@ -21,13 +21,7 @@
 
         <div class="form-group">
           <label for="password">Contraseña:</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value="<%= typeof old !== 'undefined' && old ? old.password : '' %>"
-            required
-          />
+          <input type="password" id="password" name="password" required />
         </div>
         <% if (typeof error !== 'undefined' && error !== null) { %>
         <p class="feedback"><%= error %></p>

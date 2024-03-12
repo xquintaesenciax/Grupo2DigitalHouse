@@ -5,7 +5,7 @@ module.exports = {
     let dataCategory = [];
     let dataProduct = [];
     db.categoria
-      .findAll({ include: [{ association: "products" }] })
+      .findAll()
       .then((categorys) => {
         // Mapear cada categoría
         const promises = categorys.map((category) => {
