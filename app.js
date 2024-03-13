@@ -1,10 +1,15 @@
 //requires de modulos
+require('dotenv').config();
 const express = require("express");
 const path = require("path");
 const methodOverride = require("method-override");
 const bodyParser = require("body-parser");
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
+
+//CORS
+
+const cors = require("cors");
 
 //requires de rutas
 const indexRouter = require("./routes/indexRouter");
@@ -21,13 +26,15 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // CORS-->instalar cord (npm i cors)
-// const cors = require("cors");
-// app.use((req, res, next) => {
-//   res.setHeader('Access-Control-Allow-Origin', '*'); // Permitir solicitudes desde cualquier origen
-//   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS'); // Métodos HTTP permitidos
-//   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization'); // Encabezados permitidos
-//   next();
-// });
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*"); // Permitir solicitudes desde cualquier origen
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET, POST, PUT, DELETE, OPTIONS"
+  ); // Métodos HTTP permitidos
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization"); // Encabezados permitidos
+  next();
+});
 
 //path
 const publicPath = path.resolve(__dirname, "/public");
@@ -87,3 +94,10 @@ app.use("/productos", productosRouter);
 //APIS
 
 app.use("/api", apisRouter);
+
+app.get("/dashboard", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/build/index.html"));
+});
+app.get("/dashboard/:id", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/build/index.html"));
+});
